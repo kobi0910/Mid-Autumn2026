@@ -199,16 +199,18 @@ body {
   align-items: flex-start;
   max-width: 500px;
 }
+.hero-slogan-main,
 .hero-slogan-jp {
   font-family: var(--font-mincho);
-  font-size: clamp(32px, 4.2vw, 50px);
-  font-weight: 500;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
   color: #1A1A1A;
   letter-spacing: .18em;
   line-height: 1.35;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   text-shadow: 0 1px 2px rgba(255,255,255,0.8);
 }
+.hero-slogan-sub,
 .hero-slogan-zh {
   font-family: var(--font-mincho);
   font-size: clamp(16px, 2vw, 22px);
@@ -280,7 +282,7 @@ body {
 }
 
 /* ═══════════════════════════════
-   SECTION "BUSINESS" (Harada 6-Grid Matrix)
+   SECTION HIGHLIGHTS (6-Grid Matrix)
 ═══════════════════════════════ */
 .section-highlights {
   background: #FFFFFF;
@@ -291,6 +293,14 @@ body {
   text-align: center;
   margin-bottom: 56px;
   padding: 0 24px;
+}
+.section-title-zh {
+  font-family: var(--font-mincho);
+  font-size: clamp(28px, 3.4vw, 40px);
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: .18em;
+  margin-bottom: 10px;
 }
 .section-title-en {
   font-family: var(--font-en);
@@ -303,9 +313,9 @@ body {
 }
 .section-title-sub {
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--text-muted);
-  letter-spacing: .1em;
+  letter-spacing: .12em;
 }
 
 /* 6-Grid Seamless Image Matrix */
@@ -1390,12 +1400,12 @@ body {
       </div>
     </a>
     <nav class="header-nav">
-      <a href="#highlights" class="header-link">事業分野</a>
-      <a href="#schedule" class="header-link">行程概覽</a>
-      <a href="#day1" class="header-link" onclick="switchDay(1)">DAY 01</a>
-      <a href="#day2" class="header-link" onclick="switchDay(2)">DAY 02</a>
-      <a href="#day3" class="header-link" onclick="switchDay(3)">DAY 03</a>
-      <span class="header-lang">Language</span>
+      <a href="#highlights" class="header-link">焦點地標</a>
+      <a href="#schedule" class="header-link">行程速報</a>
+      <a href="#day1" class="header-link" onclick="switchDay(1)">第一天</a>
+      <a href="#day2" class="header-link" onclick="switchDay(2)">第二天</a>
+      <a href="#day3" class="header-link" onclick="switchDay(3)">第三天</a>
+      <span class="header-lang">繁體中文</span>
       <span class="header-search">🔍</span>
     </nav>
   </div>
@@ -1408,10 +1418,10 @@ body {
 
   <!-- Slogan placed gracefully on the right matching Harada reference -->
   <div class="hero-catchphrase-wrap">
-    <div class="hero-slogan-jp">すべては、挑戦から。</div>
-    <div class="hero-slogan-zh">秋風澄澈，步入城市的明朗與詩意。</div>
-    <div class="hero-slogan-en">Make the best move.</div>
-    <div class="hero-date-badge">2026.09.25 — 09.27 SPECIAL WALK</div>
+    <div class="hero-slogan-main">澄澈秋光，與美學漫步同行</div>
+    <div class="hero-slogan-sub">2026 台北中秋 · 三日建築與文化行旅提案</div>
+    <div class="hero-slogan-en">Taipei Mid-Autumn Architecture & Culture Walk</div>
+    <div class="hero-date-badge">2026.09.25 — 09.27 連假特輯</div>
   </div>
 
   <div class="hero-harada-scroll" onclick="document.getElementById('highlights').scrollIntoView({behavior:'smooth'})">
@@ -1420,11 +1430,11 @@ body {
   </div>
 </section>
 
-<!-- ═══════ SECTION: BUSINESS (6-Grid Photographic Matrix) ═══════ -->
+<!-- ═══════ SECTION: HIGHLIGHTS (6-Grid Photographic Matrix) ═══════ -->
 <section class="section-highlights" id="highlights">
   <div class="section-title-wrap">
-    <h2 class="section-title-en">BUSINESS</h2>
-    <p class="section-title-sub">中秋行旅核心展演與地標領域</p>
+    <h2 class="section-title-zh">焦點地標與展演</h2>
+    <p class="section-title-sub">TAIPEI MID-AUTUMN HIGHLIGHTS · 三日精選必訪看點</p>
   </div>
 
   <div class="highlights-grid">
@@ -1451,7 +1461,7 @@ body {
       <div class="hl-tile-img" style="background-image:url('images/day2-railway-banner.png')"></div>
       <div class="hl-tile-overlay"></div>
       <div class="hl-tile-content">
-        <span class="hl-tile-title">建設・インフラ</span>
+        <span class="hl-tile-title">建設・鐵道</span>
         <span class="hl-tile-en">Railway Heritage</span>
       </div>
     </a>
@@ -1485,38 +1495,38 @@ body {
   </div>
 
   <div class="hl-bottom-link-wrap">
-    <a href="#dayNav" class="underline-link" onclick="document.getElementById('dayNav').scrollIntoView({behavior:'smooth'}); return false;">事業分野について</a>
+    <a href="#dayNav" class="underline-link" onclick="document.getElementById('dayNav').scrollIntoView({behavior:'smooth'}); return false;">瀏覽完整三日行程規劃 ➜</a>
   </div>
 </section>
 
-<!-- ═══════ SECTION: NEWS RELEASE (Editorial Schedule Table) ═══════ -->
+<!-- ═══════ SECTION: ITINERARY (Editorial Schedule Table) ═══════ -->
 <section class="section-schedule" id="schedule">
   <div class="schedule-container">
     <div class="schedule-sidebar">
-      <div class="vertical-title">NEWS RELEASE</div>
-      <div class="vertical-sub-zh">行程快報</div>
+      <div class="vertical-title">ITINERARY</div>
+      <div class="vertical-sub-zh">三日日程速報</div>
     </div>
 
     <div class="schedule-content">
       <div class="schedule-list">
         <div class="schedule-row" onclick="switchDay(1)">
           <div class="sr-date">2026.09.25</div>
-          <div class="sr-cat-wrap"><span class="sr-cat">建築・星空</span></div>
+          <div class="sr-cat-wrap"><span class="sr-cat">建築與星空</span></div>
           <div class="sr-title">《藤本壯介建築展：原初．未來．森》雙展區 ➜ 臺北天文館中秋「月光魔法夜」全館免票夜開</div>
         </div>
         <div class="schedule-row" onclick="switchDay(2)">
           <div class="sr-date">2026.09.26</div>
-          <div class="sr-cat-wrap"><span class="sr-cat">老街・水岸</span></div>
+          <div class="sr-cat-wrap"><span class="sr-cat">老街與水岸</span></div>
           <div class="sr-title">國立臺灣博物館 鐵道部園區 ➜ 迪化街歷史老屋散策 ➜ 大稻埕碼頭「海沐 Moonlight 市集」與落日賞月</div>
         </div>
         <div class="schedule-row" onclick="switchDay(3)">
           <div class="sr-date">2026.09.27</div>
-          <div class="sr-cat-wrap"><span class="sr-cat">文創・購物</span></div>
+          <div class="sr-cat-wrap"><span class="sr-cat">文創與購物</span></div>
           <div class="sr-title">松山文創園區四大國際熱門特展快閃巡禮 ➜ 信義都會精品漫步（微風南山 / 遠百信義 A13）</div>
         </div>
       </div>
       <div class="sr-more-wrap">
-        <a href="#dayNav" class="underline-link" onclick="document.getElementById('dayNav').scrollIntoView({behavior:'smooth'}); return false;">一覧を見る</a>
+        <a href="#dayNav" class="underline-link" onclick="document.getElementById('dayNav').scrollIntoView({behavior:'smooth'}); return false;">查看每日詳細規劃 ➜</a>
       </div>
     </div>
   </div>
@@ -1529,7 +1539,7 @@ body {
       <div class="banner-img" style="background-image:url('images/fujimoto-grand-roof.jpg')"></div>
       <div class="banner-meta">
         <span class="bm-date">2026.09.25</span>
-        <span class="bm-cat">建築・インフラ</span>
+        <span class="bm-cat">建築與設計</span>
       </div>
       <h4 class="banner-title">藤本壯介《原初．未來．森》雙展區盛大登場</h4>
     </div>
@@ -1537,7 +1547,7 @@ body {
       <div class="banner-img" style="background-image:url('images/day2-dihua-banner.jpg')"></div>
       <div class="banner-meta">
         <span class="bm-date">2026.09.26</span>
-        <span class="bm-cat">歷史・生活</span>
+        <span class="bm-cat">歷史與街廓</span>
       </div>
       <h4 class="banner-title">大稻埕百年老屋天井與海沐 Moonlight 水岸市集</h4>
     </div>
@@ -1545,7 +1555,7 @@ body {
       <div class="banner-img" style="background-image:url('images/day3-songshan.jpg')"></div>
       <div class="banner-meta">
         <span class="bm-date">2026.09.27</span>
-        <span class="bm-cat">文化・特展</span>
+        <span class="bm-cat">當期特展</span>
       </div>
       <h4 class="banner-title">松山文創園區四大國際人氣 IP 快閃巡禮</h4>
     </div>
@@ -1556,22 +1566,22 @@ body {
 <nav class="day-nav" id="dayNav">
   <a href="#" class="nav-brand" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
     <span class="nav-brand-crest">✦</span>
-    <span class="nav-brand-title">ITINERARY</span>
+    <span class="nav-brand-title">三日詳細行程</span>
   </a>
   <div class="nav-links">
     <button class="day-btn active" data-day="1" onclick="switchDay(1)">
       <span class="btn-slash">/</span>
-      <span class="btn-en"><span class="desktop-nav-text">DAY 01</span><span class="mobile-nav-text">Day 1</span></span>
+      <span class="btn-en"><span class="desktop-nav-text">第一天</span><span class="mobile-nav-text">Day 1</span></span>
       <span class="btn-date">9/25 建築 × 星空</span>
     </button>
     <button class="day-btn" data-day="2" onclick="switchDay(2)">
       <span class="btn-slash">/</span>
-      <span class="btn-en"><span class="desktop-nav-text">DAY 02</span><span class="mobile-nav-text">Day 2</span></span>
+      <span class="btn-en"><span class="desktop-nav-text">第二天</span><span class="mobile-nav-text">Day 2</span></span>
       <span class="btn-date">9/26 老街 × 市集</span>
     </button>
     <button class="day-btn" data-day="3" onclick="switchDay(3)">
       <span class="btn-slash">/</span>
-      <span class="btn-en"><span class="desktop-nav-text">DAY 03</span><span class="mobile-nav-text">Day 3</span></span>
+      <span class="btn-en"><span class="desktop-nav-text">第三天</span><span class="mobile-nav-text">Day 3</span></span>
       <span class="btn-date">9/27 文創 × 購物</span>
     </button>
   </div>
@@ -1587,7 +1597,7 @@ body {
     <div class="day-header-overlay"></div>
     <div class="day-header-content">
       <div class="day-header-tag">DAY 01 · 9/25 FRI</div>
-      <h2>DAY ONE</h2>
+      <h2>DAY 1</h2>
       <h3>建築巨匠 × 滿月星空</h3>
       <div class="day-themes">
         <span class="theme-tag"># 原初未來森</span>
@@ -1837,7 +1847,7 @@ body {
   <div class="route-strip">
     <div class="route-strip-icon">🗺️</div>
     <div class="route-strip-body">
-      <h4>Day 1 路線規劃</h4>
+      <h4>第一天 路線規劃</h4>
       <p>捷運忠孝新生站漫遊忠泰美術館與啤酒廠雙展區，傍晚搭車前往士林，沉浸台北天文館中秋月光夜</p>
       <div class="route-stops">
         <div class="rs"><div class="rs-dot"></div>忠泰美術館</div>
@@ -1860,7 +1870,7 @@ body {
     <div class="day-header-overlay"></div>
     <div class="day-header-content">
       <div class="day-header-tag">DAY 02 · 9/26 SAT</div>
-      <h2>DAY TWO</h2>
+      <h2>DAY 2</h2>
       <h3>百年老屋散策 × 碼頭落日與水岸月光</h3>
       <div class="day-themes">
         <span class="theme-tag"># 鐵道歷史</span>
@@ -2244,7 +2254,7 @@ body {
   <div class="route-strip">
     <div class="route-strip-icon">🗺️</div>
     <div class="route-strip-body">
-      <h4>Day 2 路線規劃</h4>
+      <h4>第二天 路線規劃</h4>
       <p>北門站起步步行串聯鐵道部、迪化街、碼頭海沐市集，全日徒步動線順暢無阻</p>
       <div class="route-stops">
         <div class="rs"><div class="rs-dot"></div>鐵道部園區</div>
@@ -2267,7 +2277,7 @@ body {
     <div class="day-header-overlay"></div>
     <div class="day-header-content">
       <div class="day-header-tag">DAY 03 · 9/27 SUN</div>
-      <h2>DAY THREE</h2>
+      <h2>DAY 3</h2>
       <h3>松菸文創特展 × 信義都會漫遊</h3>
       <div class="day-themes">
         <span class="theme-tag"># 松菸熱門特展</span>
@@ -2426,7 +2436,7 @@ body {
   <div class="route-strip">
     <div class="route-strip-icon">🗺️</div>
     <div class="route-strip-body">
-      <h4>Day 3 路線規劃</h4>
+      <h4>第三天 路線規劃</h4>
       <p>松菸巴洛克古蹟漫遊四大特展，午後步行或搭乘捷運至信義商圈，漫步精品選物與都會暮色</p>
       <div class="route-stops">
         <div class="rs"><div class="rs-dot"></div>松山文創園區（四大熱門展覽巡禮）</div>
@@ -2451,11 +2461,11 @@ body {
         <p><strong>旅行日期：</strong>2026 年 9 月 25 日 (五) — 9 月 27 日 (日) ｜ 3 天 2 夜</p>
         <p><strong>行程精華：</strong>藤本壯介雙展區 · 天文館月光魔法夜 · 百年鐵道官署 · 迪化老屋咖啡 · 碼頭海沐夕陽市集 · 松菸四大特展</p>
       </div>
-      <a href="#highlights" class="footer-back-top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">PAGE TOP ↑</a>
+      <a href="#highlights" class="footer-back-top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">返回頁首 ↑</a>
     </div>
     <div class="footer-bottom-row">
       <div>© 2026 TAIPEI MID-AUTUMN FESTIVAL ITINERARY. ALL RIGHTS RESERVED.</div>
-      <div>DESIGN INSPIRED BY HARADA CORPORATE MINIMALISM</div>
+      <div>2026 台北中秋三日行旅提案 ｜ 建築美學 · 老街水岸 · 文創漫遊</div>
     </div>
   </div>
 </footer>
