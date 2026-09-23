@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -59,103 +59,6 @@ body {
 }
 
 /* ═══════════════════════════════
-   GLOBAL HEADER — Fixed White Bar
-═══════════════════════════════ */
-.global-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 64px;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 2.5px solid var(--brand-yellow);
-  padding: 0 48px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-}
-.header-container {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--text-dark);
-}
-.header-logo-icon {
-  width: 32px;
-  height: 28px;
-  flex-shrink: 0;
-}
-.header-logo-text {
-  display: flex;
-  flex-direction: column;
-}
-.logo-main {
-  font-family: var(--font-en);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: .22em;
-  color: var(--text-dark);
-  line-height: 1.1;
-}
-.logo-sub {
-  font-family: var(--font-en);
-  font-size: 9.5px;
-  font-weight: 600;
-  letter-spacing: .16em;
-  color: var(--brand-yellow-dark);
-}
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.header-link {
-  color: var(--text-dark);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: .08em;
-  position: relative;
-  padding: 6px 0;
-  transition: color .2s ease;
-}
-.header-link:hover { color: var(--brand-yellow-dark); }
-.header-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2.5px;
-  background: var(--brand-yellow);
-  transform: scaleX(0);
-  transition: transform .25s ease;
-}
-.header-link:hover::after { transform: scaleX(1); }
-.header-lang {
-  font-size: 13.5px;
-  color: var(--text-mid);
-  letter-spacing: .06em;
-  margin-left: 12px;
-  cursor: pointer;
-  border-left: 1px solid rgba(0,0,0,0.15);
-  padding-left: 16px;
-}
-.header-search {
-  font-size: 14px;
-  color: var(--text-mid);
-  cursor: pointer;
-  margin-left: 4px;
-}
-
-/* ═══════════════════════════════
    HERO — Magazine Daylight Style
 ═══════════════════════════════ */
 .hero-harada {
@@ -166,7 +69,6 @@ body {
   align-items: center;
   overflow: hidden;
   background: #D4E4EE;
-  margin-top: 64px;
 }
 .hero-harada-bg {
   position: absolute;
@@ -598,7 +500,7 @@ body {
 ═══════════════════════════════ */
 .day-nav {
   position: sticky;
-  top: 64px;
+  top: 0;
   z-index: 100;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(16px);
@@ -1344,9 +1246,6 @@ body {
    RESPONSIVE (MOBILE)
 ═══════════════════════════════ */
 @media (max-width: 992px) {
-  .global-header { padding: 0 24px; }
-  .header-nav { gap: 16px; }
-  .header-lang, .header-search { display: none; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); }
   .schedule-container { grid-template-columns: 1fr; gap: 24px; }
   .schedule-sidebar { flex-direction: row; align-items: center; gap: 12px; }
@@ -1357,12 +1256,8 @@ body {
 @media (max-width: 768px) {
   body { font-size: 15px; }
 
-  /* Header */
-  .global-header { height: 56px; padding: 0 16px; }
-  .header-nav { display: none; }
-
   /* Hero */
-  .hero-harada { margin-top: 56px; min-height: 540px; height: 85vh; }
+  .hero-harada { margin-top: 0; min-height: 540px; height: 85vh; }
   .hero-catchphrase-wrap { right: 8%; left: 8%; top: 32%; max-width: none; }
   .hero-slogan-jp { font-size: clamp(28px, 8vw, 36px); }
   .hero-slogan-zh { font-size: 16px; }
@@ -1381,7 +1276,7 @@ body {
   }
 
   /* Sticky Nav */
-  .day-nav { padding: 0 16px; height: 52px; top: 56px; }
+  .day-nav { padding: 0 16px; height: 52px; top: 0; }
   .nav-brand { display: none; }
   .nav-links { width: 100%; justify-content: space-around; }
   .day-btn { padding: 0 16px; height: 52px; justify-content: center; }
@@ -1444,27 +1339,6 @@ body {
 </head>
 <body>
 
-<!-- ═══════ GLOBAL HEADER (Harada Floating Style) ═══════ -->
-<header class="global-header">
-  <div class="header-container">
-    <a href="#" class="header-logo" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
-      <svg class="header-logo-icon" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 22C5.5 22 2 18 2 13C2 8 5.5 4 10 4C14.5 4 17.5 8 19 12L22 18C23.5 22 26.5 26 31 26C35.5 26 39 22 39 17" stroke="#F0D000" stroke-width="2.6" stroke-linecap="round"/>
-        <circle cx="10" cy="13" r="3" fill="#F0D000"/>
-      </svg>
-      <div class="header-logo-text">
-        <span class="logo-main">TAIPEI</span>
-        <span class="logo-sub">MID-AUTUMN 2026</span>
-      </div>
-    </a>
-    <nav class="header-nav">
-      <a href="#highlights" class="header-link">焦點地標</a>
-      <a href="#day1" class="header-link" onclick="switchDay(1)">第一天</a>
-      <a href="#day2" class="header-link" onclick="switchDay(2)">第二天</a>
-      <a href="#day3" class="header-link" onclick="switchDay(3)">第三天</a>
-    </nav>
-  </div>
-</header>
 
 <!-- ═══════ HERO (Harada Expansive Daylight Sky) ═══════ -->
 <section class="hero-harada">
@@ -1631,12 +1505,6 @@ body {
             <a href="https://jam.jutfoundation.org.tw/" target="_blank" rel="noopener noreferrer" class="spot-official-link">官方網站 ↗</a>
             <small>The Architecture of Sou Fujimoto: Primordial Future Forest</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 忠泰美術館 ＋ 建國啤酒廠成品倉庫</div>
-            <div class="tl-meta-item">🏛️ 忠泰美術館十週年 × 東京森美術館 跨國大展</div>
-            <div class="tl-meta-item">🎟️ 全票 $250 / 優待票 $200（一票暢遊雙展區）</div>
-            <div class="tl-meta-item">🚶 兩展區步行僅約 7 分鐘（550m）</div>
-          </div>
           <div class="tl-note">
             日本自然系建築巨擘<strong>藤本壯介</strong>海外巡迴首站。由大師親自操刀空間規劃，以「原初・未來・森」為核心哲思，抹去人造與自然的界線。本次採「忠泰美術館 × 建國啤酒廠」雙展區規格，凝結三十年創作軌跡與對未來世界的純粹想像：
           </div>
@@ -1736,12 +1604,6 @@ body {
             <a href="https://www.tam.gov.taipei/" target="_blank" rel="noopener noreferrer" class="spot-official-link">官方網站 ↗</a>
             <small>🌕 中秋特別開放・「月光魔法夜」天文盛會（17:00 免費入場）</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 臺北市士林區基河路 363 號</div>
-            <div class="tl-meta-item">🎟️ 17:00 起展示場全館免費</div>
-            <div class="tl-meta-item">🌌 宇宙劇場 / 立體劇場免費加開</div>
-            <div class="tl-meta-item">🔭 專業天文望遠鏡觀月 ＋ 手機拍月亮</div>
-          </div>
           <div class="tl-note">
             迎慶中秋佳節，台北天文館推出旗艦限定企劃<strong>「月光魔法夜」</strong>！當晚 17:00 起<strong>全館展示場免費開放</strong>，頂樓觀測室難得夜開，廣場更架設專業口徑望遠鏡遙望月表坑洞，搭配球幕電影與民俗闖關，交織成秋夜最浪漫的宇宙盛宴：
           </div>
@@ -1916,12 +1778,6 @@ body {
             <a href="https://www.ntm.gov.tw/" target="_blank" rel="noopener noreferrer" class="spot-official-link">官方網站 ↗</a>
             <small>百年近代化起點・國定古蹟建築群與鐵道文化巡禮</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 捷運北門站 2 號出口旁（延平北路一段 2 號）</div>
-            <div class="tl-meta-item">🏛️ 國定古蹟「臺灣總督府交通局鐵道部」舊址</div>
-            <div class="tl-meta-item">🎟️ 全票 $100 / 半票 $50</div>
-            <div class="tl-meta-item">⏱️ 建議停留 2.5–3 小時</div>
-          </div>
           <div class="tl-note">
             建於 1918 年的鐵道部廳舍，由日治營繕技師<strong>森山松之助</strong>操刀，結合安妮女王復興樣式半木構造與英式紅磚，是臺灣近代陸上交通的心臟樞紐。歷經 16 年匠心修復，完美重現百年官署的古典優雅與深厚鐵道文化底蘊：
           </div>
@@ -2034,12 +1890,6 @@ body {
           <h3>迪化街歷史老屋散策
             <small>百年閩南巴洛克長型街屋 × 老宅咖啡、在地甜點與生活選物</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 台北市大同區迪化街一段（南京西路至十連棟）</div>
-            <div class="tl-meta-item">🏛️ 百年歷史街屋、中藥乾貨、文創生活街區</div>
-            <div class="tl-meta-item">☕ 老宅咖啡、手作甜點與在地散策小吃</div>
-            <div class="tl-meta-item">⏱️ 建議停留 1.5–2 小時</div>
-          </div>
           <div class="tl-note">
             建於 1850 年代的迪化街，是大稻埕商業傳奇的發源地。茶葉、中藥與南北貨的繁華歲月，留下了繁複華美的巴洛克立面與進深數十米的三進天井街屋。如今老宅注入新靈魂，中藥行與獨立書店、陶藝喫茶、風格咖啡並存，每一步都是穿梭百年時光的優雅漫遊：
           </div>
@@ -2155,12 +2005,6 @@ body {
             <a href="https://travel.taipei/zh-tw/attraction/details/2146" target="_blank" rel="noopener noreferrer" class="spot-official-link">官方網站 ↗</a>
             <small>秋日文創選物 × PIER 5 貨櫃餐酒 × 金色夕陽與中秋月光水岸</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 大稻埕碼頭水岸廣場（五號水門進入）</div>
-            <div class="tl-meta-item">🎪 期間限定「海沐 Moonlight 市集」＋ PIER 5 貨櫃美食</div>
-            <div class="tl-meta-item">🌅 淡水河金黃夕陽 ＆ 中秋月光水景</div>
-            <div class="tl-meta-item">⏱️ 建議停留 3–4.5 小時（日落黃金時刻至夜間賞月）</div>
-          </div>
           <div class="tl-note">
             座落五號水門旁的大稻埕碼頭，是台北最迷人的水岸夕陽聖地。中秋假期迎來浪漫的<strong>「海沐 Moonlight 市集」</strong>進駐，揉合風格職人選物、甜點咖啡、PIER 5 雙層貨櫃餐酒與現場音樂。從午後市集開市、傍晚魔幻黃金夕照，一路延伸至夜幕低垂的水岸秋月，河風徐徐、波光粼粼：
           </div>
@@ -2342,12 +2186,6 @@ body {
             <a href="https://www.songshanculturalpark.org/" target="_blank" rel="noopener noreferrer" class="spot-official-link">官方網站 ↗</a>
             <small>9/27 (日) 當日全展覽與藝文活動巡禮</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 台北市信義區光復南路 133 號（松山文創園區）</div>
-            <div class="tl-meta-item">🏛️ 80 年歷史製菸工廠古蹟群與巴洛克庭園</div>
-            <div class="tl-meta-item">🎟️ 包含多檔免費參觀展覽與戶外文化市集</div>
-            <div class="tl-meta-item">⏱️ 建議停留 4–4.5 小時（展覽、市集與園區漫步）</div>
-          </div>
           <div class="tl-note">
             建於 1937 年的松山菸廠，融合日治工業遺產與巴洛克庭園綠意。連假最後一天，園區各大歷史展廳迎來四大超人氣國際 IP 快閃、藝術跨界特展與手作體驗，一次收穫最豐沛的文創能量：
           </div>
@@ -2442,11 +2280,6 @@ body {
           <h3>信義都會漫步與購物
             <small>微風南山 × 遠百信義 A13 精選品牌旗艦</small>
           </h3>
-          <div class="tl-meta">
-            <div class="tl-meta-item">📍 微風南山（微風 atré 日本生活選物）</div>
-            <div class="tl-meta-item">📍 遠百信義 A13（頂級旗艦與懷舊食街）</div>
-            <div class="tl-meta-item">🛍️ 建議停留 2.5–3 小時</div>
-          </div>
           <div class="tl-note">
             從松菸悠然漫步進入台北最具國際質感的摩登商圈。穿梭於空橋連通道、探索日本指標潮流選物與當代設計專櫃，仰望台北 101 的璀璨暮色，為充實精緻的中秋三日假期畫下從容句點。
           </div>
@@ -2535,3 +2368,4 @@ document.addEventListener('DOMContentLoaded', observeTimeline);
 </script>
 </body>
 </html>
+
