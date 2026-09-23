@@ -976,6 +976,161 @@ body {
   line-height: 2.05;
 }
 
+/* ── Dihua Street Food Zone ── */
+.food-zone-wrapper {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 2px dashed rgba(26, 58, 82, 0.16);
+}
+.food-zone-header {
+  margin-bottom: 24px;
+}
+.food-zone-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mincho);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: .02em;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+.food-zone-header-badge {
+  font-size: 12.5px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  padding: 3px 10px;
+  background: var(--brand-yellow);
+  color: #604000;
+  border-radius: 2px;
+  letter-spacing: .03em;
+}
+.food-zone-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+.food-zone-tag {
+  background: rgba(26, 58, 82, 0.06);
+  padding: 3px 10px;
+  border-radius: 2px;
+  color: var(--text-body);
+  font-weight: 500;
+}
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.food-card {
+  background: #ffffff;
+  border: 1px solid rgba(26, 58, 82, 0.12);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.food-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 58, 82, 0.08);
+}
+.food-card-thumb-wrap {
+  width: 100%;
+  height: 175px;
+  position: relative;
+  overflow: hidden;
+  background: #f0f4f8;
+}
+.food-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.food-card:hover .food-card-thumb {
+  transform: scale(1.03);
+}
+.food-card-rating {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(26, 58, 82, 0.9);
+  color: #F0D000;
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 3px 9px;
+  border-radius: 2px;
+  letter-spacing: .02em;
+  backdrop-filter: blur(4px);
+}
+.food-card-price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(240, 208, 0, 0.95);
+  color: #4A3000;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 3px 9px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.food-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.food-card-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.food-card-name {
+  font-family: var(--font-mincho);
+  font-size: 18.5px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: .02em;
+}
+.food-card-rank {
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: #8898aa;
+}
+.food-card-loc {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.food-card-desc {
+  font-size: 14.5px;
+  color: var(--text-body);
+  line-height: 1.85;
+  margin: 0;
+  flex-grow: 1;
+}
+
 /* ── Guidebook Advisory Card ── */
 .guide-notice-box {
   margin-top: 42px;
@@ -1254,51 +1409,178 @@ body {
 }
 
 @media (max-width: 768px) {
-  body { font-size: 15px; }
+  body {
+    font-size: 14.5px;
+    word-break: break-word;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+  }
 
   /* Hero */
-  .hero-harada { margin-top: 0; min-height: 540px; height: 85vh; }
-  .hero-catchphrase-wrap { right: 8%; left: 8%; top: 32%; max-width: none; }
-  .hero-slogan-jp { font-size: clamp(28px, 8vw, 36px); }
-  .hero-slogan-zh { font-size: 16px; }
-  .hero-slogan-en { font-size: 13.5px; }
+  .hero-harada {
+    margin-top: 0;
+    min-height: 460px;
+    height: 72vh;
+  }
+  .hero-catchphrase-wrap {
+    right: 6%;
+    left: 6%;
+    top: 24%;
+    max-width: none;
+  }
+  .hero-slogan-main,
+  .hero-slogan-jp {
+    font-size: clamp(23px, 6.8vw, 32px);
+    letter-spacing: .1em;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .hero-slogan-sub,
+  .hero-slogan-zh {
+    font-size: clamp(14px, 4vw, 16px);
+    letter-spacing: .06em;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+  .hero-slogan-en {
+    font-size: 11.5px;
+    letter-spacing: .1em;
+    margin-bottom: 16px;
+  }
+  .hero-date-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+    letter-spacing: .08em;
+  }
 
-  /* Grid */
-  .highlights-grid { grid-template-columns: 1fr; }
-  .hl-tile { height: 210px; }
+  /* Highlights Section */
+  .section-highlights {
+    padding: 44px 16px 36px;
+  }
+  .section-title-wrap {
+    margin-bottom: 26px;
+    padding: 0 8px;
+  }
+  .section-title-zh {
+    font-size: 24px;
+    letter-spacing: .1em;
+    margin-bottom: 6px;
+  }
+  .section-title-sub {
+    font-size: 12px;
+    letter-spacing: .06em;
+  }
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .hl-tile {
+    height: 175px;
+  }
+  .hl-tile-title {
+    font-size: 21px;
+    letter-spacing: .15em;
+  }
+  .hl-bottom-link-wrap {
+    margin-top: 28px;
+  }
 
   /* Schedule */
-  .section-schedule { padding: 50px 16px; }
+  .section-schedule { padding: 40px 16px; }
   .schedule-row {
     grid-template-columns: 1fr;
     gap: 8px;
-    padding: 16px 0;
+    padding: 14px 0;
   }
 
-  /* Sticky Nav */
-  .day-nav { padding: 0 16px; height: 52px; top: 0; }
+  /* Sticky Day Nav */
+  .day-nav {
+    padding: 0 8px;
+    height: 50px;
+    top: 0;
+  }
   .nav-brand { display: none; }
-  .nav-links { width: 100%; justify-content: space-around; }
-  .day-btn { padding: 0 16px; height: 52px; justify-content: center; }
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+    gap: 4px;
+  }
+  .day-btn {
+    padding: 0 10px;
+    height: 50px;
+    flex: 1;
+    justify-content: center;
+  }
   .day-btn .btn-slash, .day-btn .btn-date { display: none; }
   .desktop-nav-text { display: none; }
-  .mobile-nav-text { display: inline; font-size: 14.5px; font-weight: 700; letter-spacing: .06em; }
+  .mobile-nav-text {
+    display: inline;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: .05em;
+  }
+  .day-btn::after {
+    left: 8px;
+    right: 8px;
+    height: 3px;
+  }
 
   /* Day Header */
-  .day-header { min-height: 360px; }
-  .day-header-content { padding: 40px 20px 26px; }
-  .day-header-content h2 { font-size: clamp(34px, 8.8vw, 46px); }
-  .day-header-content h3 { font-size: clamp(19px, 4.6vw, 24px); }
+  .day-header {
+    min-height: 310px;
+  }
+  .day-header-content {
+    padding: 28px 16px 20px;
+  }
+  .day-header-tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    letter-spacing: .14em;
+    margin-bottom: 8px;
+  }
+  .day-header-content h2 {
+    font-size: 34px;
+    margin-bottom: 6px;
+  }
+  .day-header-content h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    letter-spacing: .04em;
+  }
+  .day-themes {
+    gap: 6px;
+  }
+  .theme-tag {
+    font-size: 11.5px;
+    padding: 3px 10px;
+    border-radius: 14px;
+  }
+
+  /* Photo Strip — Panorama Ratio */
+  .photo-strip {
+    height: 130px;
+    gap: 2px;
+  }
 
   /* Timeline */
-  .timeline { padding: 44px 16px 28px 18px; }
-  .timeline::before { left: 14px; top: 40px; bottom: 24px; }
+  .timeline {
+    padding: 32px 12px 18px 14px;
+  }
+  .timeline::before {
+    left: 10px;
+    top: 30px;
+    bottom: 20px;
+    width: 2px;
+  }
   .tl-item {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 56px;
-    padding-left: 20px;
+    gap: 8px;
+    margin-bottom: 38px;
+    padding-left: 18px;
     position: relative;
   }
   .tl-time {
@@ -1306,33 +1588,269 @@ body {
     padding: 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .tl-time::after {
-    left: -25px;
+    left: -20px;
     right: auto;
     top: 50%;
     transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
+  }
+  .tl-time-range {
+    font-size: 16px;
+    font-weight: 700;
   }
   .tl-time-range br { display: none; }
+  .tl-time-badge {
+    font-size: 11px;
+    padding: 2px 7px;
+  }
 
-  /* Card and Images */
-  .tl-card-img-wrap { height: 260px; }
-  .tl-card-body { padding: 28px 20px 32px; }
-  .tl-card-body h3 { font-size: 21px; margin-bottom: 16px; }
+  /* Card and Main Image */
+  .tl-card {
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  .tl-card-img-wrap {
+    height: 190px;
+  }
+  .tl-card-img-label {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  .tl-card-img-badge {
+    font-size: 10px;
+    padding: 2px 5px;
+    margin-right: 4px;
+  }
+  .tl-card-body {
+    padding: 18px 14px 22px;
+  }
+  .tl-card-body h3 {
+    font-size: 18.5px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .tl-card-body h3 small {
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+  .spot-official-link {
+    font-size: 11px;
+    padding: 2px 8px;
+  }
+  .tl-note {
+    font-size: 14px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+    padding-left: 10px;
+  }
 
-  .exhibitions-container { gap: 20px; margin-top: 28px; }
-  .ex-item { grid-template-columns: 1fr; gap: 0; }
-  .ex-thumb-wrap { height: 200px; }
-  .ex-content { padding: 20px 20px 22px; }
+  /* Exhibition Sub-Items */
+  .exhibitions-container {
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .ex-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .ex-thumb-wrap {
+    height: 160px;
+  }
+  .ex-content {
+    padding: 14px 12px 16px;
+  }
+  .ex-title-row {
+    gap: 6px;
+    margin-bottom: 6px;
+    align-items: baseline;
+  }
+  .ex-title {
+    font-size: 15.5px;
+    line-height: 1.45;
+    font-weight: 700;
+  }
+  .ex-badge {
+    font-size: 11px;
+    padding: 2px 7px;
+  }
+  .ex-loc {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .ex-desc {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #3b4b5b;
+  }
 
-  .guide-notice-box { padding: 24px 20px; margin-top: 32px; }
-  .route-strip { margin: 12px 4px 56px; padding: 24px 20px; }
-  .footer-harada { padding: 48px 20px 28px; }
+  /* Food Zone on Mobile */
+  .food-zone-wrapper {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top-width: 1.5px;
+  }
+  .food-zone-header-title {
+    font-size: 17.5px;
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+  .food-zone-header-badge {
+    font-size: 11px;
+    padding: 2px 7px;
+  }
+  .food-zone-meta-tags {
+    gap: 5px;
+    margin-bottom: 14px;
+  }
+  .food-zone-tag {
+    font-size: 11.5px;
+    padding: 2px 7px;
+  }
+  .food-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .food-card {
+    border-radius: 4px;
+  }
+  .food-card-thumb-wrap {
+    height: 155px;
+  }
+  .food-card-rating {
+    font-size: 11px;
+    padding: 2px 7px;
+    top: 8px;
+    left: 8px;
+    max-width: 58%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .food-card-price {
+    font-size: 11px;
+    padding: 2px 7px;
+    top: 8px;
+    right: 8px;
+  }
+  .food-card-body {
+    padding: 12px 12px 14px;
+  }
+  .food-card-title-row {
+    margin-bottom: 4px;
+  }
+  .food-card-name {
+    font-size: 16.5px;
+    line-height: 1.35;
+  }
+  .food-card-rank {
+    font-size: 11px;
+  }
+  .food-card-loc {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .food-card-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: #445566;
+  }
+
+  /* Guide Notice Box */
+  .guide-notice-box {
+    padding: 20px 14px;
+    margin-top: 24px;
+  }
+  .gn-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+  }
+  .gn-title { font-size: 16.5px; }
+  .gn-point { gap: 10px; }
+  .gn-point-text { font-size: 13.5px; line-height: 1.75; }
+
+  /* Route Strip */
+  .route-strip {
+    margin: 6px 2px 36px;
+    padding: 18px 14px;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 4px;
+  }
+  .route-strip-icon { display: none; }
+  .route-strip-body h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .route-strip-body p {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .route-stops {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .rs {
+    font-size: 12.5px;
+  }
+
+  /* Prev / Next Day Buttons */
+  .day-nav-buttons {
+    padding: 0 4px;
+    margin-bottom: 40px;
+    gap: 8px;
+  }
+  .day-nav-btn {
+    padding: 10px 12px;
+    gap: 6px;
+    min-height: 48px;
+    border-radius: 4px;
+  }
+  .day-nav-btn-dir {
+    font-size: 9.5px;
+    letter-spacing: .12em;
+  }
+  .day-nav-btn-day {
+    font-size: 12.5px;
+    letter-spacing: .02em;
+  }
+
+  /* Footer */
+  .footer-harada {
+    padding: 36px 16px 24px;
+  }
+  .footer-top-row {
+    gap: 22px;
+    margin-bottom: 24px;
+  }
+  .footer-brand-title {
+    font-size: 18px;
+  }
+  .footer-brand-sub {
+    font-size: 13px;
+  }
+  .footer-details {
+    font-size: 12.5px;
+    line-height: 1.85;
+  }
+  .footer-back-top {
+    font-size: 11.5px;
+    padding: 7px 14px;
+  }
+  .footer-bottom-row {
+    font-size: 11px;
+    padding-top: 16px;
+  }
 }
 
 </style>
@@ -1941,6 +2459,196 @@ body {
                 <div class="ex-loc">📍 迪化街南段至中段（小藝埕、民藝埕、眾藝埕、大藝埕等聚落）</div>
                 <div class="ex-desc">建於 1917 年的<strong>屈臣氏大藥房</strong>（A.S. Watson Building）擁有華美巴洛克立面，內部結合獨立書店、咖啡與文創選物；安西街附近的<strong>昭和浪漫洗濯屋</strong>以昭和老宅霜淇淋成為網美地標；<strong>民藝埕／眾藝埕／大藝埕</strong>等複合空間以天井天光與復古磨石子地板深受青睞；更有<strong>郭怡美書店</strong>、<strong>新芳春茶行</strong>等經典老宅，穩坐老街隱藏版人文打卡清單。</div>
               </div>
+            </div>
+          </div><!-- /exhibitions-container -->
+
+          <!-- ══════ 迪化街社群熱門美食專區 ══════ -->
+          <div class="food-zone-wrapper">
+            <div class="food-zone-header">
+              <div class="food-zone-header-title">
+                <span>🔥 迪化街社群熱門美食 TOP 10 特搜</span>
+                <span class="food-zone-header-badge">Threads · IG · FB 話題爆紅</span>
+              </div>
+              <div class="food-zone-meta-tags">
+                <span class="food-zone-tag">📱 Threads / IG Reels 百萬播放洗版</span>
+                <span class="food-zone-tag">❤️ 社群讚數與打卡破萬頂流</span>
+                <span class="food-zone-tag">👥 老街排隊人龍與老饕話題名店</span>
+                <span class="food-zone-tag">📊 依社群討論熱度與人氣排行</span>
+              </div>
+            </div>
+
+            <div class="food-grid">
+
+              <!-- Food 1: 路力草莓大福 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-strawberry.jpg" class="food-card-thumb" alt="路力草莓大福 巨無霸爆汁草莓">
+                  <span class="food-card-rating">🔥 Reels 百萬觀看</span>
+                  <span class="food-card-price">排隊天花板</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">路力草莓大福（大稻埕店）</span>
+                    <span class="food-card-rank">TOP 01</span>
+                  </div>
+                  <div class="food-card-loc">📍 迪化街一段 20 號（永樂市場斜對面）</div>
+                  <p class="food-card-desc">Threads 與 IG 短影音現象級排隊神店！草莓季每逢營業便吸引綿延數十米人龍。現場手工現包「巨無霸草莓大福」，外皮薄軟 Q 彈不黏牙，包入飽滿爆汁的碩大鮮草莓與細膩紅豆餡，斷面特寫在 IG 洗版破千萬次點閱。</p>
+                </div>
+              </div>
+
+              <!-- Food 2: 昭和浪漫洗濯屋 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-showa.jpg" class="food-card-thumb" alt="昭和浪漫洗濯屋 日式老宅霜淇淋">
+                  <span class="food-card-rating">📸 IG 破萬則打卡</span>
+                  <span class="food-card-price">昭和網美聖地</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">昭和浪漫洗濯屋</span>
+                    <span class="food-card-rank">TOP 02</span>
+                  </div>
+                  <div class="food-card-loc">📍 安西街 3 號（近大稻埕公園）</div>
+                  <p class="food-card-desc">社群各大網美必拍的大稻埕地標！由近 90 年日治洗衣店老宅改建，斑駁木質老招牌與復古日式街角拍起來電影感拉滿。主打大人味濃郁霜淇淋（威士忌巧克力、焙茶蒙布朗等）與焦糖布丁，隨便拍都是 IG 熱門封面。</p>
+                </div>
+              </div>
+
+              <!-- Food 3: 魷布院 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-squid.jpg" class="food-card-thumb" alt="魷布院 乾式熟成極品鮮烤魷魚">
+                  <span class="food-card-rating">💥 Threads 爆紅黑馬</span>
+                  <span class="food-card-price">熱壓熟成魷魚</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">魷布院（極品鮮烤魷魚）</span>
+                    <span class="food-card-rank">TOP 03</span>
+                  </div>
+                  <div class="food-card-loc">📍 迪化街一段 121 號</div>
+                  <p class="food-card-desc">近期在 Threads 與 Reels 上以驚人聲量橫空出世的排隊新霸主！特選深海魷魚乾式熟成，以特製厚重鐵板高溫瞬壓烙印，滋滋作響的煙燻香氣與解壓製作畫面瘋傳社群。刷上鹹甜微辣秘醬，口感酥脆香脆、越嚼越香。</p>
+                </div>
+              </div>
+
+              <!-- Food 4: 滋養製菓 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-ziyang.jpg" class="food-card-thumb" alt="滋養製菓 現烤最中與草莓大福">
+                  <span class="food-card-rating">🍵 IG 長青頂流</span>
+                  <span class="food-card-price">神級日式伴手禮</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">滋養製菓（滋養豆餡舖）</span>
+                    <span class="food-card-rank">TOP 04</span>
+                  </div>
+                  <div class="food-card-loc">📍 迪化街一段 247 號</div>
+                  <p class="food-card-desc">創始於 1953 年的日式和菓子指標名店。冬季草莓大福掀起瘋搶，平時最受歡迎的則是「現烤最中套餐」：焦香酥脆的糯米外殼夾入綿密細緻紅豆餡，搭配現沖熱煎茶坐在老街騎樓木椅上細細品嚐，是社群最高讚的品味之作。</p>
+                </div>
+              </div>
+
+              <!-- Food 5: 丸隆生魚行 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-wanlong.jpg" class="food-card-thumb" alt="丸隆生魚行 厚切握壽司與滿料味噌湯">
+                  <span class="food-card-rating">🐟 Threads 萬讚爆文</span>
+                  <span class="food-card-price">市場高CP立吞</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">丸隆生魚行</span>
+                    <span class="food-card-rank">TOP 05</span>
+                  </div>
+                  <div class="food-card-loc">📍 永樂市場 1 樓 1418 攤</div>
+                  <p class="food-card-desc">被全網封為「台北小築地」的市場立吞傳奇！魚貨批發背景讓厚切生魚片與炙燒生牛肉鮮度爆表。最狂的是消費滿額即享「鮭魚魚肉豆腐味噌湯無限續碗」，滿滿一碗都是料，在 FB 美食社團與 Threads 常常收穫破萬點讚。</p>
+                </div>
+              </div>
+
+              <!-- Food 6: 林合發油飯店 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-linhefa.jpg" class="food-card-thumb" alt="林合發油飯店 百年傳奇秒殺油飯">
+                  <span class="food-card-rating">🍚 FB 百萬社團推爆</span>
+                  <span class="food-card-price">郭董彌月御用</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">林合發油飯店</span>
+                    <span class="food-card-rank">TOP 06</span>
+                  </div>
+                  <div class="food-card-loc">📍 永樂市場 1 樓 1041 攤（近民樂街入口）</div>
+                  <p class="food-card-desc">創立於 1894 年的百年傳奇油飯，更是郭台銘指定彌月名店，各大台北美食社團討論傳統油飯時的絕對第一名。古法大木桶蒸製長糯米伴隨麻油清香，鋪滿厚實香菇肉燥與香酥大雞腿，清晨開賣短短數小時便火速完售。</p>
+                </div>
+              </div>
+
+              <!-- Food 7: 純真豆花 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-chunzhendouhua.jpg" class="food-card-thumb" alt="純真豆花 芋泥瀑布焦糖冰">
+                  <span class="food-card-rating">🍧 IG 視覺系爆款</span>
+                  <span class="food-card-price">芋泥熔岩瀑布</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">純真豆花（大稻埕店）</span>
+                    <span class="food-card-rank">TOP 07</span>
+                  </div>
+                  <div class="food-card-loc">📍 民樂街 43 號（近永樂市場）</div>
+                  <p class="food-card-desc">IG Reels 上的視覺系洗版王！招牌「芋泥瀑布冰」與「芋頭艦隊」將熬煮得濃稠如岩漿的紫芋泥豪邁傾倒在黑糖刨冰上，搭配古法手洗野生愛玉與手工嫩仙草，視覺衝擊力十足，是芋頭控在社群瘋狂轉發的消暑聖物。</p>
+                </div>
+              </div>
+
+              <!-- Food 8: 迪母ㄟ白糖粿 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-baitangguo.jpg" class="food-card-thumb" alt="迪母ㄟ白糖粿 現炸拉絲糯米甜點">
+                  <span class="food-card-rating">🍡 Reels 熱搜拉絲</span>
+                  <span class="food-card-price">散步銅板甜點</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">迪母ㄟ白糖粿（迪化店）</span>
+                    <span class="food-card-rank">TOP 08</span>
+                  </div>
+                  <div class="food-card-loc">📍 迪化街一段 19 號（迪化街正入口處）</div>
+                  <p class="food-card-desc">南台灣傳統街頭甜點在迪化街老街入口造成熱潮。現點現炸的金黃白糖粿外層極度酥脆、內裡軟糯甚至能拉出長長拉絲，沾裹鐵觀音、麵茶、花生或黑芝麻糖粉，裝在簡約文青紙袋裡邊走邊拍，IG 短影音觀看量居高不下。</p>
+                </div>
+              </div>
+
+              <!-- Food 9: 老竹子三發包子 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-sanfa.jpg" class="food-card-thumb" alt="老竹子三發包子 彩色千層饅頭">
+                  <span class="food-card-rating">🥟 Threads 熱門開箱</span>
+                  <span class="food-card-price">千層饅頭創始</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">老竹子三發包子</span>
+                    <span class="food-card-rank">TOP 09</span>
+                  </div>
+                  <div class="food-card-loc">📍 永樂市場 1 樓 1429 攤</div>
+                  <p class="food-card-desc">Threads 上外地旅客朝聖大稻埕時最熱門的「開箱伴手禮」。招牌「千層饅頭」將奶黃、芋泥、紅綠豆以麵皮層層疊捲，能像千層派一樣一片片撕開品嚐，麵香純厚；爆餡多汁的「竹筍肉包」更是常年被整袋瘋狂回購。</p>
+                </div>
+              </div>
+
+              <!-- Food 10: 幻猻家珈琲 -->
+              <div class="food-card">
+                <div class="food-card-thumb-wrap">
+                  <img src="images/food-huansunjia.jpg" class="food-card-thumb" alt="幻猻家珈琲 咖哩飯與焦糖布丁">
+                  <span class="food-card-rating">🍮 IG 破萬收藏</span>
+                  <span class="food-card-price">老派咖哩布丁</span>
+                </div>
+                <div class="food-card-body">
+                  <div class="food-card-title-row">
+                    <span class="food-card-name">幻猻家珈琲 Pallas Cafe</span>
+                    <span class="food-card-rank">TOP 10</span>
+                  </div>
+                  <div class="food-card-loc">📍 迪化街一段 14 巷 9 號（近霞海城隍廟）</div>
+                  <p class="food-card-desc">IG 上被譽為「被咖啡耽誤的咖哩店與昭和布丁」！藏身靜謐紅磚小巷，綠色皮革沙發與復古光影氛圍極佳。招牌手炒「香料咖哩飯」辛香濃醇，搭配方形的「純手工焦糖布丁」苦甜扎實，在社群收藏榜長年高居不下。</p>
+                </div>
+              </div>
+
             </div>
           </div>
 
