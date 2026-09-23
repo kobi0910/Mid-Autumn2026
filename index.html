@@ -1179,6 +1179,94 @@ body {
 .rs-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-yellow); flex-shrink: 0; }
 
 /* ═══════════════════════════════
+   DAY PREV / NEXT NAVIGATION BUTTONS
+═══════════════════════════════ */
+.day-nav-buttons {
+  max-width: 1240px;
+  margin: 0 auto 80px;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.day-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-en);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-dark);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: all .22s ease;
+  position: relative;
+  overflow: hidden;
+}
+.day-nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brand-yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+  z-index: 0;
+}
+.day-nav-btn.btn-next::before { transform-origin: right; }
+.day-nav-btn:hover::before { transform: scaleX(1); }
+.day-nav-btn:hover {
+  border-color: var(--brand-yellow);
+  color: var(--text-dark);
+  box-shadow: 0 6px 20px rgba(240,208,0,0.30);
+}
+.day-nav-btn span,
+.day-nav-btn svg { position: relative; z-index: 1; }
+.day-nav-btn-label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.day-nav-btn.btn-next .day-nav-btn-label { align-items: flex-end; }
+.day-nav-btn-dir {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  color: var(--text-muted);
+  transition: color .22s;
+}
+.day-nav-btn:hover .day-nav-btn-dir { color: var(--text-mid); }
+.day-nav-btn-day {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: .1em;
+  transition: color .22s;
+}
+.day-nav-btn-ghost {
+  /* placeholder to keep layout balanced when one side is missing */
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .day-nav-buttons {
+    padding: 0 16px;
+    margin-bottom: 56px;
+  }
+  .day-nav-btn { padding: 12px 18px; font-size: 12.5px; }
+  .day-nav-btn-day { font-size: 13.5px; }
+}
+
+/* ═══════════════════════════════
    FOOTER — Dark Magazine Style
 ═══════════════════════════════ */
 .footer-harada {
@@ -1762,6 +1850,18 @@ body {
     </div>
   </div>
 
+  <!-- Prev / Next Day Buttons -->
+  <div class="day-nav-buttons">
+    <div class="day-nav-btn-ghost"></div>
+    <button class="day-nav-btn btn-next" onclick="switchDay(2)">
+      <div class="day-nav-btn-label">
+        <span class="day-nav-btn-dir">NEXT DAY</span>
+        <span class="day-nav-btn-day">第二天 · 9/26</span>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
 </section>
 
 
@@ -2169,6 +2269,24 @@ body {
     </div>
   </div>
 
+  <!-- Prev / Next Day Buttons -->
+  <div class="day-nav-buttons">
+    <button class="day-nav-btn btn-prev" onclick="switchDay(1)">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="day-nav-btn-label">
+        <span class="day-nav-btn-dir">PREV DAY</span>
+        <span class="day-nav-btn-day">第一天 · 9/25</span>
+      </div>
+    </button>
+    <button class="day-nav-btn btn-next" onclick="switchDay(3)">
+      <div class="day-nav-btn-label">
+        <span class="day-nav-btn-dir">NEXT DAY</span>
+        <span class="day-nav-btn-day">第三天 · 9/27</span>
+      </div>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
 </section>
 
 
@@ -2348,6 +2466,18 @@ body {
         <div class="rs"><div class="rs-dot"></div>信義都會漫步（微風南山 / 遠百信義 A13）</div>
       </div>
     </div>
+  </div>
+
+  <!-- Prev / Next Day Buttons -->
+  <div class="day-nav-buttons">
+    <button class="day-nav-btn btn-prev" onclick="switchDay(2)">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="day-nav-btn-label">
+        <span class="day-nav-btn-dir">PREV DAY</span>
+        <span class="day-nav-btn-day">第二天 · 9/26</span>
+      </div>
+    </button>
+    <div class="day-nav-btn-ghost"></div>
   </div>
 
 </section>
