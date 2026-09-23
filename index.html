@@ -1401,12 +1401,9 @@ body {
     </a>
     <nav class="header-nav">
       <a href="#highlights" class="header-link">焦點地標</a>
-      <a href="#schedule" class="header-link">行程速報</a>
       <a href="#day1" class="header-link" onclick="switchDay(1)">第一天</a>
       <a href="#day2" class="header-link" onclick="switchDay(2)">第二天</a>
       <a href="#day3" class="header-link" onclick="switchDay(3)">第三天</a>
-      <span class="header-lang">繁體中文</span>
-      <span class="header-search">🔍</span>
     </nav>
   </div>
 </header>
@@ -1499,68 +1496,6 @@ body {
   </div>
 </section>
 
-<!-- ═══════ SECTION: ITINERARY (Editorial Schedule Table) ═══════ -->
-<section class="section-schedule" id="schedule">
-  <div class="schedule-container">
-    <div class="schedule-sidebar">
-      <div class="vertical-title">ITINERARY</div>
-      <div class="vertical-sub-zh">三日日程速報</div>
-    </div>
-
-    <div class="schedule-content">
-      <div class="schedule-list">
-        <div class="schedule-row" onclick="switchDay(1)">
-          <div class="sr-date">2026.09.25</div>
-          <div class="sr-cat-wrap"><span class="sr-cat">建築與星空</span></div>
-          <div class="sr-title">《藤本壯介建築展：原初．未來．森》雙展區 ➜ 臺北天文館中秋「月光魔法夜」全館免票夜開</div>
-        </div>
-        <div class="schedule-row" onclick="switchDay(2)">
-          <div class="sr-date">2026.09.26</div>
-          <div class="sr-cat-wrap"><span class="sr-cat">老街與水岸</span></div>
-          <div class="sr-title">國立臺灣博物館 鐵道部園區 ➜ 迪化街歷史老屋散策 ➜ 大稻埕碼頭「海沐 Moonlight 市集」與落日賞月</div>
-        </div>
-        <div class="schedule-row" onclick="switchDay(3)">
-          <div class="sr-date">2026.09.27</div>
-          <div class="sr-cat-wrap"><span class="sr-cat">文創與購物</span></div>
-          <div class="sr-title">松山文創園區四大國際熱門特展快閃巡禮 ➜ 信義都會精品漫步（微風南山 / 遠百信義 A13）</div>
-        </div>
-      </div>
-      <div class="sr-more-wrap">
-        <a href="#dayNav" class="underline-link" onclick="document.getElementById('dayNav').scrollIntoView({behavior:'smooth'}); return false;">查看每日詳細規劃 ➜</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════ SECTION: BANNERS (3-Column Harada Bottom Cards) ═══════ -->
-<section class="section-banners">
-  <div class="banners-grid">
-    <div class="banner-card" onclick="switchDay(1)">
-      <div class="banner-img" style="background-image:url('images/fujimoto-grand-roof.jpg')"></div>
-      <div class="banner-meta">
-        <span class="bm-date">2026.09.25</span>
-        <span class="bm-cat">建築與設計</span>
-      </div>
-      <h4 class="banner-title">藤本壯介《原初．未來．森》雙展區盛大登場</h4>
-    </div>
-    <div class="banner-card" onclick="switchDay(2)">
-      <div class="banner-img" style="background-image:url('images/day2-dihua-banner.jpg')"></div>
-      <div class="banner-meta">
-        <span class="bm-date">2026.09.26</span>
-        <span class="bm-cat">歷史與街廓</span>
-      </div>
-      <h4 class="banner-title">大稻埕百年老屋天井與海沐 Moonlight 水岸市集</h4>
-    </div>
-    <div class="banner-card" onclick="switchDay(3)">
-      <div class="banner-img" style="background-image:url('images/day3-songshan.jpg')"></div>
-      <div class="banner-meta">
-        <span class="bm-date">2026.09.27</span>
-        <span class="bm-cat">當期特展</span>
-      </div>
-      <h4 class="banner-title">松山文創園區四大國際人氣 IP 快閃巡禮</h4>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════ DAY NAV ═══════ -->
 <nav class="day-nav" id="dayNav">
