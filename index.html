@@ -20,11 +20,11 @@
   --brand-yellow-border: #E0C800;
 
   /* Blue kept for external links only */
-  --brand-blue:          #4A7FA5;
-  --brand-blue-dark:     #366180;
-  --brand-blue-hover:    #5B90B8;
+  --brand-blue:          #2A628A;
+  --brand-blue-dark:     #1E4968;
+  --brand-blue-hover:    #3C7AA8;
   --brand-blue-light:    #EBF3FB;
-  --brand-blue-border:   #B8D3EC;
+  --brand-blue-border:   #B0CBE4;
 
   --bg-main:          #E8EFF5;   /* 淡天青底色 */
   --bg-subtle:        #DDE7EF;
@@ -32,10 +32,10 @@
   --border:           #C4D4E2;
   --border-light:     #D4E2EE;
 
-  --text-dark:        #141E2A;
-  --text-body:        #2C3E50;
-  --text-mid:         #526070;
-  --text-muted:       #7890A0;
+  --text-dark:        #111927;
+  --text-body:        #233140;
+  --text-mid:         #475668;
+  --text-muted:       #556C82;
   --white:            #FFFFFF;
 
   --radius-sm:        2px;
@@ -53,7 +53,8 @@ body {
   background: var(--bg-main);
   color: var(--text-body);
   font-size: 16px;
-  line-height: 1.85;
+  line-height: 1.75;
+  letter-spacing: .02em;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -845,15 +846,15 @@ body {
 
 /* Yellow left-border note block */
 .tl-note {
-  font-size: 16.5px;
-  line-height: 2.2;
+  font-size: 15.5px;
+  line-height: 1.8;
   color: var(--text-body);
   border-left: 4px solid var(--brand-yellow);
-  background: #FEFAE0;
-  padding: 22px 28px;
+  background: #FFFDE8;
+  padding: 20px 26px;
   border-radius: 0 4px 4px 0;
-  margin-top: 28px;
-  margin-bottom: 34px;
+  margin-top: 24px;
+  margin-bottom: 30px;
 }
 .tl-note strong { color: var(--text-dark); font-weight: 700; }
 
@@ -863,7 +864,7 @@ body {
   align-items: center;
   gap: 5px;
   font-family: var(--font-sans);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: .04em;
   color: var(--brand-blue);
@@ -886,15 +887,15 @@ body {
 
 /* ── Exhibitions Grid ── */
 .exhibitions-container {
-  margin-top: 36px;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 26px;
 }
 .ex-item {
   display: grid;
   grid-template-columns: 290px 1fr;
-  gap: 34px;
+  gap: 32px;
   background: var(--bg-main);
   border-radius: var(--radius);
   overflow: hidden;
@@ -922,7 +923,7 @@ body {
 }
 .ex-item:hover .ex-thumb { transform: scale(1.05); }
 .ex-content {
-  padding: 24px 28px 24px 0;
+  padding: 22px 26px 22px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -932,12 +933,12 @@ body {
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .ex-title {
   font-family: var(--font-mincho);
-  font-size: 19.5px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
   color: var(--text-dark);
   letter-spacing: .02em;
   line-height: 1.45;
@@ -961,26 +962,29 @@ body {
   color: #1A3A52;
 }
 .ex-loc {
-  font-size: 14.5px;
+  font-size: 13.5px;
   color: var(--text-muted);
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 6px;
   font-family: var(--font-sans);
 }
 .ex-desc {
-  font-size: 15.5px;
+  font-size: 14.5px;
   color: var(--text-body);
-  line-height: 2.05;
+  line-height: 1.75;
 }
 
 /* ── Dihua Street Food Zone ── */
 .food-zone-wrapper {
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 2px dashed rgba(26, 58, 82, 0.16);
+  margin-top: 48px;
+  padding: 34px 32px 36px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(196, 212, 226, 0.75);
+  border-radius: 8px;
+  box-shadow: 0 2px 14px rgba(26, 58, 82, 0.03);
 }
 .food-zone-header {
   margin-bottom: 24px;
@@ -1011,7 +1015,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--text-muted);
   font-family: var(--font-sans);
   line-height: 1.6;
@@ -1026,17 +1030,188 @@ body {
 .food-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 22px;
 }
 @media (max-width: 768px) {
   .food-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
   }
+}
+/* ── Dinner Selection (Horizontal Cards) ── */
+.dinner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 32px;
+}
+.dinner-item {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 32px;
+  background: var(--bg-main);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.dinner-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  border-color: var(--brand-yellow-border);
+}
+.dinner-thumb-wrap {
+  position: relative;
+  height: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+.dinner-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s ease;
+}
+.dinner-item:hover .dinner-thumb {
+  transform: scale(1.05);
+}
+.dinner-thumb-rating {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(17, 25, 39, 0.92);
+  color: #F0D000;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 4px 10px;
+  border-radius: 2px;
+  letter-spacing: .02em;
+  backdrop-filter: blur(4px);
+}
+.dinner-thumb-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(240, 208, 0, 0.95);
+  color: #4A3000;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  padding: 4px 10px;
+  border-radius: 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.dinner-content {
+  padding: 24px 28px 24px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dinner-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.dinner-name {
+  font-family: var(--font-mincho);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: .02em;
+}
+.dinner-rank-badge {
+  font-size: 12px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--brand-blue-dark);
+  background: rgba(42, 98, 138, 0.08);
+  padding: 3px 9px;
+  border-radius: 2px;
+}
+.dinner-loc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dinner-desc {
+  font-size: 14.5px;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.dinner-info-box {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(196, 212, 226, 0.7);
+  border-radius: 4px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.dinner-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.dinner-info-label {
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .dinner-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .dinner-thumb-wrap {
+    height: 185px;
+    min-height: auto;
+  }
+  .dinner-content {
+    padding: 18px 16px 20px;
+  }
+}
+.food-card-info-box {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(26, 58, 82, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+.food-card-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.food-card-info-label {
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  flex-shrink: 0;
 }
 .food-card {
   background: #ffffff;
   border: 1px solid rgba(26, 58, 82, 0.12);
-  border-radius: 3px;
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1048,7 +1223,7 @@ body {
 }
 .food-card-thumb-wrap {
   width: 100%;
-  height: 175px;
+  height: 180px;
   position: relative;
   overflow: hidden;
   background: #f0f4f8;
@@ -1068,7 +1243,7 @@ body {
   left: 10px;
   background: rgba(26, 58, 82, 0.9);
   color: #F0D000;
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 700;
   font-family: var(--font-sans);
   padding: 3px 9px;
@@ -1090,7 +1265,7 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 .food-card-body {
-  padding: 16px 18px 18px;
+  padding: 16px 18px 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1099,11 +1274,11 @@ body {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 .food-card-name {
   font-family: var(--font-mincho);
-  font-size: 18.5px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text-dark);
   letter-spacing: .02em;
@@ -1112,7 +1287,10 @@ body {
   font-size: 12px;
   font-family: var(--font-sans);
   font-weight: 700;
-  color: #8898aa;
+  color: var(--brand-blue-dark);
+  background: rgba(42, 98, 138, 0.08);
+  padding: 2px 8px;
+  border-radius: 2px;
 }
 .food-card-loc {
   font-size: 13px;
@@ -1124,9 +1302,9 @@ body {
   gap: 5px;
 }
 .food-card-desc {
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--text-body);
-  line-height: 1.85;
+  line-height: 1.75;
   margin: 0;
   flex-grow: 1;
 }
@@ -1175,8 +1353,8 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  font-size: 15.5px;
-  line-height: 2.05;
+  font-size: 15px;
+  line-height: 1.75;
   color: var(--text-body);
 }
 .gn-point-icon {
@@ -1204,7 +1382,7 @@ body {
   border: 1px solid var(--border);
   border-left: 4px solid var(--brand-yellow);
   border-radius: var(--radius);
-  padding: 34px 44px;
+  padding: 32px 40px;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -1214,13 +1392,13 @@ body {
 .route-strip-body { flex: 1 1 240px; }
 .route-strip-body h4 {
   font-family: var(--font-mincho);
-  font-size: 19.5px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
   color: var(--text-dark);
   letter-spacing: .06em;
   margin-bottom: 8px;
 }
-.route-strip-body p { font-size: 16px; color: var(--text-body); line-height: 1.85; }
+.route-strip-body p { font-size: 15px; color: var(--text-body); line-height: 1.7; }
 .route-stops { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; }
 .rs {
   display: flex;
@@ -1567,10 +1745,10 @@ body {
 
   /* Timeline */
   .timeline {
-    padding: 32px 12px 18px 14px;
+    padding: 36px 16px 24px 16px;
   }
   .timeline::before {
-    left: 10px;
+    left: 12px;
     top: 30px;
     bottom: 20px;
     width: 2px;
@@ -1579,8 +1757,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 38px;
-    padding-left: 18px;
+    margin-bottom: 44px;
+    padding-left: 20px;
     position: relative;
   }
   .tl-time {
@@ -1695,9 +1873,9 @@ body {
 
   /* Food Zone on Mobile */
   .food-zone-wrapper {
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top-width: 1.5px;
+    margin-top: 28px;
+    padding: 22px 14px 24px;
+    border-radius: 6px;
   }
   .food-zone-header-title {
     font-size: 17.5px;
@@ -1718,13 +1896,13 @@ body {
   }
   .food-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
   .food-card {
     border-radius: 4px;
   }
   .food-card-thumb-wrap {
-    height: 155px;
+    height: 160px;
   }
   .food-card-rating {
     font-size: 11px;
@@ -1743,7 +1921,7 @@ body {
     right: 8px;
   }
   .food-card-body {
-    padding: 12px 12px 14px;
+    padding: 14px 14px 16px;
   }
   .food-card-title-row {
     margin-bottom: 4px;
@@ -1865,7 +2043,7 @@ body {
 
   <!-- Slogan placed gracefully on the right matching Harada reference -->
   <div class="hero-catchphrase-wrap">
-    <div class="hero-slogan-main">澄澈秋光，與美學漫步同行</div>
+    <div class="hero-slogan-main">秋日微風，漫步台北迷人街角</div>
     <div class="hero-slogan-sub">2026 台北中秋 · 三日建築與文化行旅提案</div>
     <div class="hero-slogan-en">Taipei Mid-Autumn Architecture & Culture Walk</div>
     <div class="hero-date-badge">2026.09.25 — 09.27 連假特輯</div>
@@ -1989,6 +2167,7 @@ body {
         <span class="theme-tag"># 忠泰美術館十週年</span>
         <span class="theme-tag"># 大阪萬博大屋根</span>
         <span class="theme-tag"># 天文館中秋夜</span>
+        <span class="theme-tag"># 士林晚餐精選</span>
       </div>
     </div>
   </div>
@@ -2024,7 +2203,7 @@ body {
             <small>The Architecture of Sou Fujimoto: Primordial Future Forest</small>
           </h3>
           <div class="tl-note">
-            日本自然系建築巨擘<strong>藤本壯介</strong>海外巡迴首站。由大師親自操刀空間規劃，以「原初・未來・森」為核心哲思，抹去人造與自然的界線。本次採「忠泰美術館 × 建國啤酒廠」雙展區規格，凝結三十年創作軌跡與對未來世界的純粹想像：
+            日本自然系建築大師<strong>藤本壯介</strong>海外巡迴首站。由大師親自策劃空間，以「原初・未來・森」貫穿三十年創作哲思。展覽採「忠泰美術館 × 建國啤酒廠」雙展區規格，呈現百件模型手稿與世界級木構震撼：
           </div>
 
           <!-- 雙展區深度介紹與實景照片 -->
@@ -2040,7 +2219,7 @@ body {
                   <span class="ex-badge">主展館</span>
                 </div>
                 <div class="ex-loc">📍 臺北市大安區市民大道三段 178 號</div>
-                <div class="ex-desc">打破傳統線性陳列，近百件經典模型如林木般錯落懸吊，引領觀者漫步於靈感密林。匯聚倫敦蛇形藝廊展亭、法國白樹大樓、武藏野美大圖書館及 House NA 等代表作，並首度公開大師親筆手繪筆記。</div>
+                <div class="ex-desc">近百件經典模型如林木般錯落懸吊，打造漫步靈感密林的沉浸體驗。匯聚倫敦蛇形藝廊、法國白樹大樓、武藏野美大圖書館及 House NA 等代表作，並首度公開珍貴手繪原稿。</div>
               </div>
             </div>
 
@@ -2055,7 +2234,7 @@ body {
                   <span class="ex-badge orange">木構地標</span>
                 </div>
                 <div class="ex-loc">📍 臺北市中山區松江路 25 巷 40 號（建國啤酒廠成品倉庫）</div>
-                <div class="ex-desc">走入挑高紅磚百年古蹟倉庫，親睹 2025 大阪萬博象徵「環形大屋頂（大屋根）」高達 4.1 公尺的 1:5 實體木構。穿梭於傳統榫接樑柱之下，近距離感受世界最大木構造的磅礡尺度與光影詩意。</div>
+                <div class="ex-desc">走入挑高紅磚百年啤酒倉庫，親睹 2025 大阪萬博象徵「環形大屋頂」1:5 巨型木構（高達 4.1 公尺）。穿梭傳統榫接樑柱之下，近距離感受世界最大木構造的磅礡尺度與光影之美。</div>
               </div>
             </div>
           </div>
@@ -2075,7 +2254,7 @@ body {
               <div class="gn-point">
                 <div class="gn-point-icon">🎟️</div>
                 <div class="gn-point-text">
-                  <strong>票務與購票提醒：</strong>一票暢遊雙展區（全票 $250 / 優待票 $200）。<strong>建國啤酒廠現場不售票</strong>，請務必先於忠泰美術館現場櫃檯或線上通路購票後再行前往。
+                  <strong>一票暢遊雙展區：</strong>全票 $250 / 優待票 $200。<strong>建國啤酒廠現場不售票</strong>，請務必先於忠泰美術館櫃檯或線上通路購票。
                 </div>
               </div>
 
@@ -2083,7 +2262,7 @@ body {
               <div class="gn-point">
                 <div class="gn-point-icon">🚶</div>
                 <div class="gn-point-text">
-                  <strong>建議參觀動線：</strong>先訪<strong>忠泰美術館</strong>主展區（建議停留約 1.5–2 小時） ➜ 沿市民大道漫步 7 分鐘（550m） ➜ 進入<strong>建國啤酒廠成品倉庫</strong>體驗萬博大屋根木構（約 1 小時）。
+                  <strong>推薦參觀動線：</strong><strong>忠泰美術館主展區</strong>（約 1.5–2 小時） ➜ 沿市民大道步行 7 分鐘（550m） ➜ 進入<strong>建國啤酒廠成品倉庫</strong>體驗萬博大屋根（約 1 小時）。
                 </div>
               </div>
 
@@ -2091,7 +2270,7 @@ body {
               <div class="gn-point">
                 <div class="gn-point-icon">🕒</div>
                 <div class="gn-point-text">
-                  <strong>開放與定時導覽：</strong>週二至週日 10:00–18:00（17:30 停止入場），週一休館。週末 14:00 於主展區提供專人定時導覽。
+                  <strong>開放與導覽時間：</strong>週二至週日 10:00–18:00（17:30 停止入場，週一休館）。週末 14:00 於主展區提供專人定時導覽。
                 </div>
               </div>
             </div>
@@ -2123,7 +2302,7 @@ body {
             <small>🌕 中秋特別開放・「月光魔法夜」天文盛會（17:00 免費入場）</small>
           </h3>
           <div class="tl-note">
-            迎慶中秋佳節，台北天文館推出旗艦限定企劃<strong>「月光魔法夜」</strong>！當晚 17:00 起<strong>全館展示場免費開放</strong>，頂樓觀測室難得夜開，廣場更架設專業口徑望遠鏡遙望月表坑洞，搭配球幕電影與手機觀月，交織成秋夜最浪漫的宇宙盛宴：
+            中秋限定旗艦企劃！17:00 起<strong>全館展示場免費開放</strong>，頂樓觀測室難得夜間開放入場。戶外廣場架設多座大口徑專業天文望遠鏡，搭配星空球幕電影與手機直焦觀月，共度知性浪漫的秋夜宇宙盛宴：
           </div>
 
           <!-- 月光魔法夜亮點活動與配圖 -->
@@ -2139,7 +2318,7 @@ body {
                   <span class="ex-badge">免費限定</span>
                 </div>
                 <div class="ex-loc">📍 1F 大廳服務台劃位 ｜ 宇宙劇場 (IMAX Dome) ＆ 3D 立體劇場</div>
-                <div class="ex-desc">17:00 起展示場自由參觀。指標性半球型球幕「宇宙劇場」與 3D 劇場特別加開免費場次，帶領觀眾沉浸飛越星際、俯瞰月表紋理。（※ 抵館後請先至大廳領取免費劃位票，數量有限發完為止）</div>
+                <div class="ex-desc">17:00 起展示場自由參觀。指標性半球型球幕「宇宙劇場」與 3D 劇場特別加開免費場次，身歷其境飛越浩瀚星際、俯瞰月表細緻紋理。（※ 請先至 1F 大廳服務台領取免費劃位票，發完為止）</div>
               </div>
             </div>
 
@@ -2154,46 +2333,122 @@ body {
                   <span class="ex-badge orange">觀月焦點</span>
                 </div>
                 <div class="ex-loc">📍 天文館後門戶外廣場 ＆ 頂樓第二觀測室</div>
-                <div class="ex-desc">現場架設多座 20–45 公分大口徑專業望遠鏡，由解說員引導細賞第谷環形山與雨海地貌。現場更設有手機支架與專人引導，讓隨身手機也能零失誤捕捉純淨清晰的中秋滿月特寫。</div>
+                <div class="ex-desc">現場架設多座 20–45 公分專業天文望遠鏡，由解說員引導細賞第谷環形山與雨海地貌。現場設有手機攝影支架與專人指導，隨手拍出清晰動人的中秋滿月特寫。</div>
               </div>
             </div>
           </div>
 
-          <!-- 月光魔法夜參觀攻略卡 -->
-          <div class="guide-notice-box">
-            <div class="gn-header">
-              <div class="gn-title-wrap">
-                <span class="gn-icon">🌕</span>
-                <span class="gn-title">「月光魔法夜」暢玩動線攻略</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="tl-time-range">20:00<br>—<br>21:30</div>
+        <div class="tl-time-badge">晚餐精選</div>
+      </div>
+      <div class="tl-card">
+        <div class="tl-card-img-wrap">
+          <img src="images/food-gobo-hotpot.jpg" class="tl-card-img" alt="士林捷運站周邊 晚餐推薦">
+          <div class="tl-card-img-overlay"></div>
+          <div class="tl-card-img-label">
+            <span class="tl-card-img-badge">SPOT 03</span>
+            士林捷運站周邊 · 晚餐精選美饌
+          </div>
+        </div>
+        <div class="tl-card-body">
+          <h3>
+            士林捷運站周邊 · 晚餐餐廳推薦
+            <small>★ Google 評分 4.7 — 4.9 超高口碑 ｜ 捷運士林站步行 1–4 分鐘</small>
+          </h3>
+          <div class="tl-note">
+            結束台北天文館的宇宙星空與滿月漫遊後，搭車約 5 分鐘抵達捷運士林站。商圈周邊精選三家人氣口碑名店，包含老母雞精燉火鍋、韓義獨創麵食與日式溫暖定食，在徐徐秋夜中悠閒大啖美饌：
+          </div>
+
+          <div class="dinner-list">
+
+            <!-- Restaurant 1: 牛棒碗安GOBO精緻鍋物 -->
+            <div class="dinner-item">
+              <div class="dinner-thumb-wrap">
+                <img src="images/food-gobo-hotpot.jpg" class="dinner-thumb" alt="牛棒碗安GOBO精緻鍋物 老母雞精燉雞湯鍋物">
+                <span class="dinner-thumb-rating">★ 4.7 Google 評分</span>
+                <span class="dinner-thumb-badge">🍲 自熬老母雞精燉</span>
               </div>
-              <span class="gn-badge">💡 內行撇步</span>
+              <div class="dinner-content">
+                <div class="dinner-title-row">
+                  <span class="dinner-name">牛棒碗安GOBO精緻鍋物</span>
+                  <span class="dinner-rank-badge">士林站 步行4分</span>
+                </div>
+                <div class="dinner-loc">📍 台北市士林區大東路131號</div>
+                <div class="dinner-desc">距離士林站步行約 4 分鐘。主打自家老母雞純天然精燉高湯，座位寬敞舒適，無添加化學香精，是秋夜觀月後的暖心首選。</div>
+                <div class="dinner-info-box">
+                  <div class="dinner-info-item">
+                    <span class="dinner-info-label">🕒 營業時間：</span>
+                    <span>週二至週五 12:00–15:00 / 17:30–22:00、週末 11:30–22:00（週一公休）</span>
+                  </div>
+                  <div class="dinner-info-item">
+                    <span class="dinner-info-label">✨ 店內特色：</span>
+                    <span>無添加香精自熬雞湯、嚴選肉品與海鮮拼盤、內用霜淇淋與飲料無限供應。</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="gn-points">
-              <!-- Point 1 -->
-              <div class="gn-point">
-                <div class="gn-point-icon">🎟️</div>
-                <div class="gn-point-text">
-                  <strong>優先劃位免費劇場：</strong>17:00 開放入場後，<strong>建議先至 1F 大廳服務台領取免費場次票券</strong>，劇場席次有限，提早劃位避免向隅。
-                </div>
+            <!-- Restaurant 2: 金孫韓廚 義大利麵 -->
+            <div class="dinner-item">
+              <div class="dinner-thumb-wrap">
+                <img src="images/food-golden-son.jpg" class="dinner-thumb" alt="金孫韓廚 義大利麵 韓義結合獨創料理">
+                <span class="dinner-thumb-rating">★ 4.7 Google 評分</span>
+                <span class="dinner-thumb-badge">🍝 韓義混血美饌</span>
               </div>
-
-              <!-- Point 2 -->
-              <div class="gn-point">
-                <div class="gn-point-icon">🔭</div>
-                <div class="gn-point-text">
-                  <strong>錯峰體驗手機拍月：</strong>完成劃位後趁初夜人潮湧入前，先至後門廣場排隊專業望遠鏡，由解說人員協助用手機捕捉高畫質月貌。
+              <div class="dinner-content">
+                <div class="dinner-title-row">
+                  <span class="dinner-name">金孫韓廚 義大利麵</span>
+                  <span class="dinner-rank-badge">士林站 1號口旁</span>
                 </div>
-              </div>
-
-              <!-- Point 3 -->
-              <div class="gn-point">
-                <div class="gn-point-icon">🌙</div>
-                <div class="gn-point-text">
-                  <strong>秋夜星空愜意漫賞：</strong>19:30–20:30 轉往頂樓第二觀測室或美崙公園草坪，在徐徐夜風與中秋明月下漫步，享受靜謐知性的宇宙之夜。
+                <div class="dinner-loc">📍 台北市士林區中山北路五段505巷20號</div>
+                <div class="dinner-desc">隱身士林站 1 號出口旁靜巷，以純白簡約韓系咖啡廳風格，呈現韓義混血創意料理。招牌辣醬與辣炒魷魚麵香氣濃郁，氛圍優雅愜意。</div>
+                <div class="dinner-info-box">
+                  <div class="dinner-info-item">
+                    <span class="dinner-info-label">🕒 營業時間：</span>
+                    <span>週一至週五 12:00–15:00 / 17:30–21:30、週末 12:00–14:30 / 17:30–21:30</span>
+                  </div>
+                  <div class="dinner-info-item">
+                    <span class="dinner-info-label">✨ 店內特色：</span>
+                    <span>韓式辣醬義大利麵、辣炒魷魚義大利麵、韓式炸雞、海鮮煎餅。</span>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <!-- Restaurant 3: 士林貳貳參丼飯 -->
+            <div class="dinner-item">
+              <div class="dinner-thumb-wrap">
+                <img src="images/food-shilin-223.jpg" class="dinner-thumb" alt="士林貳貳參丼飯 日式丼飯與定食">
+                <span class="dinner-thumb-rating">★ 4.9 Google 評分</span>
+                <span class="dinner-thumb-badge">🍱 4.9星極高口碑</span>
+              </div>
+              <div class="dinner-content">
+                <div class="dinner-title-row">
+                  <span class="dinner-name">士林貳貳參丼飯</span>
+                  <span class="dinner-rank-badge">士林站 1號口靜巷</span>
+                </div>
+                <div class="dinner-loc">📍 台北市士林區中正路223巷11號</div>
+                <div class="dinner-desc">士林站 1 號出口靜巷裡的溫暖木質日式食堂。現點現做炙燒鮭魚與牛五花丼飯，用料澎湃扎實，為 4.9 星超高口碑名店。</div>
+                <div class="dinner-info-box">
+                  <div class="dinner-info-item">
+                    <span class="dinner-info-label">🕒 營業時間：</span>
+                    <span>週一至週日 11:30–14:00 / 17:30–20:30</span>
+                  </div>
+                  <div class="dinner-info-item">
+                    <span class="dinner-info-label">✨ 店內特色：</span>
+                    <span>炙燒鮭魚丼、牛五花丼、炸豬排定食、附餐鮮甜味噌湯。</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
@@ -2206,11 +2461,12 @@ body {
     <div class="route-strip-icon">🗺️</div>
     <div class="route-strip-body">
       <h4>第一天 路線規劃</h4>
-      <p>捷運忠孝新生站漫遊忠泰美術館與啤酒廠雙展區，傍晚搭車前往士林，沉浸台北天文館中秋月光夜</p>
+      <p>捷運忠孝新生站漫遊忠泰美術館與啤酒廠雙展區，傍晚前往士林天文館賞月，夜間品嚐士林站人氣美饌</p>
       <div class="route-stops">
         <div class="rs"><div class="rs-dot"></div>忠泰美術館</div>
         <div class="rs"><div class="rs-dot"></div>建國啤酒廠（步行7分）</div>
         <div class="rs"><div class="rs-dot"></div>臺北市立天文科學教育館</div>
+        <div class="rs"><div class="rs-dot"></div>士林捷運站周邊晚餐（精緻鍋物／韓義料理／日式丼飯）</div>
       </div>
     </div>
   </div>
@@ -2284,7 +2540,7 @@ body {
             <small>百年近代化起點・國定古蹟建築群與鐵道文化巡禮</small>
           </h3>
           <div class="tl-note">
-            建於 1918 年、1920 年落成的<strong>鐵道部廳舍</strong>，紅磚與白牆相映，外觀風格神似東京車站與總統府。歷經長達 16 年嚴謹修復於 2020 年對外開放，是「臺灣博物館系統」四館的最後一塊關鍵拼圖：
+            落成於 1920 年的<strong>鐵道部廳舍</strong>，紅磚與白牆相映，散發如東京車站般的百年典雅氣質。歷時 16 年嚴謹修復重現風華，為臺灣現代化歷史與建築美學的起點：
           </div>
 
           <!-- 鐵道部園區精選看點 -->
@@ -2300,7 +2556,7 @@ body {
                   <span class="ex-badge">建築焦點</span>
                 </div>
                 <div class="ex-loc">📍 廳舍主樓 1F–2F 大廳與歷史展間</div>
-                <div class="ex-desc">走進迎賓大廳即可欣賞華麗細緻的歐式宮廷美學裝潢，立體石膏灰泥雕花天花板與優雅木造弧形階梯是熱門拍照打卡點；抬頭留意木造屋頂桁架、海灣窗（Bay Window）等精雕細琢的建築角落，更是導覽特別推薦的秘境亮點。</div>
+                <div class="ex-desc">迎賓大廳重現歐洲宮廷美學，立體石膏灰泥天花板與優雅木造弧形階梯華美典雅；抬頭可賞百年木造屋架與八角樓海灣窗，處處皆是建築工藝精髓。</div>
               </div>
             </div>
 
@@ -2315,7 +2571,7 @@ body {
                   <span class="ex-badge orange">人氣必訪</span>
                 </div>
                 <div class="ex-loc">📍 廳舍常設展廳 ＆ 戶外小火車站</div>
-                <div class="ex-desc">以臺灣鐵道發展史為主題，打造仿真木造車站與復古月台，更完整重現 1:1 列車車廂供訪客走入內部拍照體驗。園區內還可搭乘動態小火車（名額有限，需至現場抽取號碼牌），深受各年齡層喜愛。</div>
+                <div class="ex-desc">以臺灣鐵道史為軸，仿真木造老車站、復古月台與 1:1 復刻車廂身歷其境。步入車廂即可拍出懷舊電影感，戶外動態迷你小火車更添探索樂趣（請先至現場抽取號碼牌）。</div>
               </div>
             </div>
           </div>
@@ -2335,7 +2591,7 @@ body {
               <div class="gn-point">
                 <div class="gn-point-icon">⏰</div>
                 <div class="gn-point-text">
-                  <strong>開放時間：</strong>週二至週日 <strong>09:30–17:00</strong>（每週一休館，若遇國定假日則照常開館）。
+                  <strong>開放時間：</strong>週二至週日 <strong>09:30–17:00</strong>（每週一休館，逢國定假日照常開館）。
                 </div>
               </div>
 
@@ -2343,7 +2599,7 @@ body {
               <div class="gn-point">
                 <div class="gn-point-icon">🎟️</div>
                 <div class="gn-point-text">
-                  <strong>票價資訊：</strong>單館全票 <strong>$100</strong>、半票 <strong>$50</strong>；亦可購買「<strong>臺博館四館聯票</strong>」（本館、古生物館、南門館、北門館）全票 <strong>$130</strong>、半票 <strong>$65</strong>，一個月內皆可彈性跨館使用。
+                  <strong>票價資訊：</strong>單館全票 <strong>$100</strong>、半票 <strong>$50</strong>；亦可購買「<strong>臺博館四館聯票</strong>」全票 <strong>$130</strong>、半票 <strong>$65</strong>，一個月內皆可彈性跨館使用。
                 </div>
               </div>
 
@@ -2351,7 +2607,7 @@ body {
               <div class="gn-point">
                 <div class="gn-point-icon">🚂</div>
                 <div class="gn-point-text">
-                  <strong>小火車搭乘提示：</strong>園區迷你小火車各場次名額有限，若欲體驗建議入館後優先前往現場領取號碼牌，依梯次排隊搭乘。
+                  <strong>小火車搭乘提示：</strong>迷你小火車各場次名額有限，若欲體驗建議入館後優先至現場抽取號碼牌，依梯次排隊搭乘。
                 </div>
               </div>
             </div>
@@ -2381,7 +2637,7 @@ body {
             <small>百年閩南巴洛克長型街屋 × 懷舊場景沉浸體驗、廟宇信仰、在地小吃與文青老宅</small>
           </h3>
           <div class="tl-note">
-            建於 1850 年代的迪化街，是大稻埕商業傳奇的發源地。茶葉、中藥與南北貨的繁華歲月，留下了繁複華美的巴洛克立面與進深數十米的三進天井街屋。如今老宅注入新靈魂，復古情境空間、中藥行、文創選物與生活小吃並存，每一步都是穿梭百年時光的優雅漫遊：
+            發跡於 1850 年代的迪化街，匯聚茶香、中藥與南北貨百年風華。經典閩南巴洛克立面與進深數十米的天井街屋，如今注入文創選物與生活小吃，步步皆是時光交織的優雅走讀：
           </div>
 
           <!-- 迪化街精選看點 -->
@@ -2397,7 +2653,7 @@ body {
                   <span class="ex-badge">打卡必訪</span>
                 </div>
                 <div class="ex-loc">📍 迪化街一段 44 號（永樂市場對面）</div>
-                <div class="ex-desc">探索大稻埕的絕佳第一站！2至3樓精心打造為沉浸式懷舊展區，重現「客安中藥行」抓藥台、「菊元治裝所」、「永樂燈苑」、「春生喫茶店」與「稻江公學校」等五大經典時代場景。精緻燈光與豐富道具營造出濃郁的舊時代氛圍，是漫步老街前拍出滿滿穿越感人像美照的熱門地標。</div>
+                <div class="ex-desc">老街散策的最佳起點！2 至 3 樓打造五大沉浸式復古展區：客安中藥行抓藥台、菊元治裝所、永樂燈苑、春生喫茶店與稻江公學校。道具與光影極為考究，隨手拍出滿滿穿越感的經典人像。</div>
               </div>
             </div>
 
@@ -2412,7 +2668,7 @@ body {
                   <span class="ex-badge dark">攝影焦點</span>
                 </div>
                 <div class="ex-loc">📍 迪化街北段（一段 348–366 號，近台北橋／捷運大橋頭站）</div>
-                <div class="ex-desc">10 棟相連的巴洛克式紅磚街屋，完整保留開闊的騎樓拱廊與細緻山牆細節。漫步於筆直延伸的紅磚長廊下歷史感十足，是婚紗、旗袍與人像寫真的絕佳取景背景，早晨斜陽與午後暮色光線皆格外動人。</div>
+                <div class="ex-desc">十棟相連的巴洛克紅磚街屋，完整保存開闊清水磚拱廊與立面山牆。步入筆直深邃的紅磚長廊，斜陽漫照、光影層次分明，是老街最具代表性的攝影焦點。</div>
               </div>
             </div>
 
@@ -2427,7 +2683,7 @@ body {
                   <span class="ex-badge orange">香火鼎盛</span>
                 </div>
                 <div class="ex-loc">📍 迪化街一段 61 號</div>
-                <div class="ex-desc">全台馳名的市定古蹟與信仰中心，以祈求良緣的「月下老人」名揚海內外。廟前常有絡繹不絕的旅人排隊求紅線、品嚐甘甜平安茶（紅棗枸杞茶），吸引眾多國內外旅客朝聖打卡，廟宇雖小卻蘊含極為濃郁純樸的在地人情味。</div>
+                <div class="ex-desc">全台香火最盛的月老名廟！市定古蹟殿宇小巧卻極富靈氣。參拜祈求紅線良緣後，飲一杯熱騰甘甜的平安茶（紅棗枸杞茶），感受老街最醇厚溫暖的人情味。</div>
               </div>
             </div>
 
@@ -2442,7 +2698,7 @@ body {
                   <span class="ex-badge">美食生活</span>
                 </div>
                 <div class="ex-loc">📍 迪化街一段 21 號（永樂市場與周邊巷弄）</div>
-                <div class="ex-desc">一樓是在地小吃的寶庫（林合發古法油飯、丸隆生魚片立吞等常登熱搜榜），二、三樓則是全台最具規模的布料批發與手工訂製大本營。社群常記錄「市場巷弄紅磚牆」與「繽紛布料攤位」的生活感視角，煙火氣息十足。</div>
+                <div class="ex-desc">大稻埕生活煙火氣的核心！1 樓匯聚百年油飯與人氣生魚片立吞，2、3 樓為全台最大布料批發與訂製基地。穿梭市場紅磚巷弄與布行色彩之間，盡展老台北地道日常。</div>
               </div>
             </div>
 
@@ -2457,7 +2713,7 @@ body {
                   <span class="ex-badge teal">文青選物</span>
                 </div>
                 <div class="ex-loc">📍 迪化街南段至中段（小藝埕、民藝埕、眾藝埕、大藝埕等聚落）</div>
-                <div class="ex-desc">建於 1917 年的<strong>屈臣氏大藥房</strong>（A.S. Watson Building）擁有華美巴洛克立面，內部結合獨立書店、咖啡與文創選物；安西街附近的<strong>昭和浪漫洗濯屋</strong>以昭和老宅霜淇淋成為網美地標；<strong>民藝埕／眾藝埕／大藝埕</strong>等複合空間以天井天光與復古磨石子地板深受青睞；更有<strong>郭怡美書店</strong>、<strong>新芳春茶行</strong>等經典老宅，穩坐老街隱藏版人文打卡清單。</div>
+                <div class="ex-desc">1917 年興建的<strong>屈臣氏大藥房</strong>擁有華美英倫巴洛克立面，內部結合獨立書店與咖啡；串聯<strong>民藝埕</strong>天井老宅、<strong>昭和浪漫洗濯屋</strong>與<strong>郭怡美書店</strong>，勾勒出極具格調的文青聚落。</div>
               </div>
             </div>
           </div><!-- /exhibitions-container -->
@@ -2492,7 +2748,7 @@ body {
                     <span class="food-card-rank">TOP 01</span>
                   </div>
                   <div class="food-card-loc">📍 迪化街一段 20 號（永樂市場斜對面）</div>
-                  <p class="food-card-desc">Threads 與 IG 短影音現象級排隊神店！草莓季每逢營業便吸引綿延數十米人龍。現場手工現包「巨無霸草莓大福」，外皮薄軟 Q 彈不黏牙，包入飽滿爆汁的碩大鮮草莓與細膩紅豆餡，斷面特寫在 IG 洗版破千萬次點閱。</p>
+                  <p class="food-card-desc">Threads 與 IG 短影音現象級排隊神店！手工現包「巨無霸草莓大福」，外皮薄軟 Q 彈不黏牙，包入爆汁碩大鮮草莓與細膩紅豆餡，斷面特寫在社群洗版千萬次點閱。</p>
                 </div>
               </div>
 
@@ -2509,7 +2765,7 @@ body {
                     <span class="food-card-rank">TOP 02</span>
                   </div>
                   <div class="food-card-loc">📍 安西街 3 號（近大稻埕公園）</div>
-                  <p class="food-card-desc">社群各大網美必拍的大稻埕地標！由近 90 年日治洗衣店老宅改建，斑駁木質老招牌與復古日式街角拍起來電影感拉滿。主打大人味濃郁霜淇淋（威士忌巧克力、焙茶蒙布朗等）與焦糖布丁，隨便拍都是 IG 熱門封面。</p>
+                  <p class="food-card-desc">近 90 年日治洗衣店老宅改建，復古街角自帶電影感濾鏡。主打大人味濃郁霜淇淋（威士忌巧克力、焙茶蒙布朗）與手工焦糖布丁，老街必拍網美打卡地標。</p>
                 </div>
               </div>
 
@@ -2526,7 +2782,7 @@ body {
                     <span class="food-card-rank">TOP 03</span>
                   </div>
                   <div class="food-card-loc">📍 迪化街一段 121 號</div>
-                  <p class="food-card-desc">近期在 Threads 與 Reels 上以驚人聲量橫空出世的排隊新霸主！特選深海魷魚乾式熟成，以特製厚重鐵板高溫瞬壓烙印，滋滋作響的煙燻香氣與解壓製作畫面瘋傳社群。刷上鹹甜微辣秘醬，口感酥脆香脆、越嚼越香。</p>
+                  <p class="food-card-desc">Threads 瘋傳爆紅排隊黑馬！特選深海魷魚乾式熟成，以厚重鐵板高溫瞬壓烙印，煙燻香氣撲鼻。刷上鹹甜微辣秘醬，口感焦香酥脆、越嚼越過癮。</p>
                 </div>
               </div>
 
@@ -2543,7 +2799,7 @@ body {
                     <span class="food-card-rank">TOP 04</span>
                   </div>
                   <div class="food-card-loc">📍 迪化街一段 247 號</div>
-                  <p class="food-card-desc">創始於 1953 年的日式和菓子指標名店。冬季草莓大福掀起瘋搶，平時最受歡迎的則是「現烤最中套餐」：焦香酥脆的糯米外殼夾入綿密細緻紅豆餡，搭配現沖熱煎茶坐在老街騎樓木椅上細細品嚐，是社群最高讚的品味之作。</p>
+                  <p class="food-card-desc">創始於 1953 年的和菓子指標名店。「現烤最中套餐」焦香酥脆米殼夾入細緻紅豆餡，搭配現沖熱煎茶坐在騎樓木椅上品嚐，優雅老派的極致享受。</p>
                 </div>
               </div>
 
@@ -2560,7 +2816,7 @@ body {
                     <span class="food-card-rank">TOP 05</span>
                   </div>
                   <div class="food-card-loc">📍 永樂市場 1 樓 1418 攤</div>
-                  <p class="food-card-desc">被全網封為「台北小築地」的市場立吞傳奇！魚貨批發背景讓厚切生魚片與炙燒生牛肉鮮度爆表。最狂的是消費滿額即享「鮭魚魚肉豆腐味噌湯無限續碗」，滿滿一碗都是料，在 FB 美食社團與 Threads 常常收穫破萬點讚。</p>
+                  <p class="food-card-desc">永樂市場傳奇立吞！魚貨批發背景造就極鮮品質，厚切生魚片軟嫩鮮甜。消費滿額即享「鮭魚豆腐味噌湯免費無限續碗」，社群萬讚推爆的高 CP 名店。</p>
                 </div>
               </div>
 
@@ -2577,7 +2833,7 @@ body {
                     <span class="food-card-rank">TOP 06</span>
                   </div>
                   <div class="food-card-loc">📍 永樂市場 1 樓 1041 攤（近民樂街入口）</div>
-                  <p class="food-card-desc">創立於 1894 年的百年傳奇油飯，更是郭台銘指定彌月名店，各大台北美食社團討論傳統油飯時的絕對第一名。古法大木桶蒸製長糯米伴隨麻油清香，鋪滿厚實香菇肉燥與香酥大雞腿，清晨開賣短短數小時便火速完售。</p>
+                  <p class="food-card-desc">創立於 1894 年的百年油飯傳奇，政商名流指定彌月首選。古法木桶蒸製長糯米浸潤麻油香，鋪滿厚實香菇肉燥與香酥大雞腿，清晨開賣數小時即售罄。</p>
                 </div>
               </div>
 
@@ -2594,7 +2850,7 @@ body {
                     <span class="food-card-rank">TOP 07</span>
                   </div>
                   <div class="food-card-loc">📍 民樂街 43 號（近永樂市場）</div>
-                  <p class="food-card-desc">IG Reels 上的視覺系洗版王！招牌「芋泥瀑布冰」與「芋頭艦隊」將熬煮得濃稠如岩漿的紫芋泥豪邁傾倒在黑糖刨冰上，搭配古法手洗野生愛玉與手工嫩仙草，視覺衝擊力十足，是芋頭控在社群瘋狂轉發的消暑聖物。</p>
+                  <p class="food-card-desc">IG Reels 視覺系洗版王！招牌「芋泥瀑布冰」將濃稠紫芋泥如熔岩般傾瀉於黑糖刨冰上，搭配古法手洗野生愛玉與手工嫩仙草，視覺衝擊力十足、香甜消暑。</p>
                 </div>
               </div>
 
@@ -2611,7 +2867,7 @@ body {
                     <span class="food-card-rank">TOP 08</span>
                   </div>
                   <div class="food-card-loc">📍 迪化街一段 19 號（迪化街正入口處）</div>
-                  <p class="food-card-desc">南台灣傳統街頭甜點在迪化街老街入口造成熱潮。現點現炸的金黃白糖粿外層極度酥脆、內裡軟糯甚至能拉出長長拉絲，沾裹鐵觀音、麵茶、花生或黑芝麻糖粉，裝在簡約文青紙袋裡邊走邊拍，IG 短影音觀看量居高不下。</p>
+                  <p class="food-card-desc">老街入口高人氣散步甜點！現點現炸金黃白糖粿，外層極度酥脆、內裡熱騰軟糯能拉出誘人拔絲，裹上鐵觀音、麵茶或花生糖粉，文青紙袋隨手拍都上鏡。</p>
                 </div>
               </div>
 
@@ -2628,7 +2884,7 @@ body {
                     <span class="food-card-rank">TOP 09</span>
                   </div>
                   <div class="food-card-loc">📍 永樂市場 1 樓 1429 攤</div>
-                  <p class="food-card-desc">Threads 上外地旅客朝聖大稻埕時最熱門的「開箱伴手禮」。招牌「千層饅頭」將奶黃、芋泥、紅綠豆以麵皮層層疊捲，能像千層派一樣一片片撕開品嚐，麵香純厚；爆餡多汁的「竹筍肉包」更是常年被整袋瘋狂回購。</p>
+                  <p class="food-card-desc">永樂市場經典排隊名物。獨創「千層饅頭」將奶黃、芋泥與豆餡層層疊捲，能像千層派般撕開品嚐，綿密純厚；爆汁竹筍肉包更是旅人必帶伴手禮。</p>
                 </div>
               </div>
 
@@ -2645,7 +2901,7 @@ body {
                     <span class="food-card-rank">TOP 10</span>
                   </div>
                   <div class="food-card-loc">📍 迪化街一段 14 巷 9 號（近霞海城隍廟）</div>
-                  <p class="food-card-desc">IG 上被譽為「被咖啡耽誤的咖哩店與昭和布丁」！藏身靜謐紅磚小巷，綠色皮革沙發與復古光影氛圍極佳。招牌手炒「香料咖哩飯」辛香濃醇，搭配方形的「純手工焦糖布丁」苦甜扎實，在社群收藏榜長年高居不下。</p>
+                  <p class="food-card-desc">藏身靜謐老巷的昭和風喫茶館。手炒招牌「香料咖哩飯」辛香濃郁，方形「純手工焦糖布丁」質地扎實苦甜，在老派皮沙發與復古光影中享受悠閒午後。</p>
                 </div>
               </div>
 
@@ -2678,7 +2934,7 @@ body {
             <small>秋日文創選物 × 金色夕陽與中秋月光水岸</small>
           </h3>
           <div class="tl-note">
-            座落五號水門旁的大稻埕碼頭，是台北最迷人的水岸夕陽聖地。中秋假期迎來浪漫的<strong>「海沐 Moonlight 市集」</strong>進駐，揉合風格職人選物、甜點咖啡與現場音樂。從午後市集開市、傍晚魔幻黃金夕照，一路延伸至夜幕低垂的水岸秋月，河風徐徐、波光粼粼：
+            大稻埕碼頭是台北最迷人的水岸夕陽聖地。中秋假期「海沐 Moonlight 市集」浪漫進駐，集結風格選物、烘焙甜點與水岸音樂。從傍晚黃金夕照延伸至夜幕低垂的水岸秋月，河風徐徐、波光粼粼：
           </div>
 
           <!-- 海沐市集精選看點 -->
@@ -2694,7 +2950,7 @@ body {
                   <span class="ex-badge">風格選物</span>
                 </div>
                 <div class="ex-loc">📍 碼頭主廣場與林蔭市集步道</div>
-                <div class="ex-desc">「海沐 Moonlight 市集」以中秋月光為題，匯聚台灣獨立手作職人、原創金工銀飾、綠植皮件與香氛選物；現場更有甜點工作室帶來精緻可麗露、肉桂捲與手沖精品咖啡，是微風吹拂下挑選生活選物的舒心時光。</div>
+                <div class="ex-desc">「海沐 Moonlight 市集」以中秋月光為題，匯聚台灣獨立手作金工、皮件、香氛與植栽選物；更有獨立甜點工作室帶來精緻可麗露與手沖精品咖啡，在河風吹拂下悠然尋味。</div>
               </div>
             </div>
 
@@ -2709,7 +2965,7 @@ body {
                   <span class="ex-badge teal">絕景時刻</span>
                 </div>
                 <div class="ex-loc">📍 沿河木棧道、親水階梯與觀景平台</div>
-                <div class="ex-desc">17:00–18:00 迎來淡水河最動人的日落黃金時刻，金黃晚霞映染波光，紅頭舢舨帆船靜泊水面；華燈初上之際，中秋圓月自對岸天際升起，映照著粼粼水波與街頭藝人悠揚琴聲，為秋夜增添無限詩意。</div>
+                <div class="ex-desc">17:00–18:00 迎來淡水河最動人的日落黃金時刻，金黃晚霞映染波光，紅頭帆船靜泊水面；華燈初上之際，中秋圓月自對岸天際升起，伴隨岸邊悠揚樂音，共度詩意秋夜。</div>
               </div>
             </div>
           </div>
@@ -2807,7 +3063,7 @@ body {
             <small>9/27 (日) 當日全展覽與藝文活動巡禮</small>
           </h3>
           <div class="tl-note">
-            建於 1937 年的松山菸廠，融合日治工業遺產與巴洛克庭園綠意。連假最後一天，園區各大歷史展廳迎來四大超人氣國際 IP 快閃、藝術跨界特展與手作體驗，一次收穫最豐沛的文創能量：
+            建於 1937 年的松山菸廠融合日治工業遺產與巴洛克庭園。連假最後一天，四大超人氣國際 IP 快閃特展齊聚歷史倉庫，一次收穫最豐沛的文創生活能量：
           </div>
 
           <!-- 9/27 當日松菸四大熱門展覽與快閃活動 -->
@@ -2824,7 +3080,7 @@ body {
                   <a href="https://www.songshanculturalpark.org/exhibition/activity/fcd1a6b8-a956-4759-9f45-a218bc759feb" target="_blank" rel="noopener noreferrer" class="spot-official-link" style="font-size:12.5px; padding:3px 10px;">展覽詳情 ↗</a>
                 </div>
                 <div class="ex-loc">📍 男澡堂 ｜ 展期 7/3–9/29 ｜ 每日 10:00–18:00</div>
-                <div class="ex-desc">進駐松菸市定古蹟「男澡堂」，攜手芬蘭國寶 <strong>Moomin（嚕嚕米）</strong>、荷蘭繪本 <strong>Miffy（米飛兔）</strong> 與韓國人氣 <strong>Brunch Brother</strong> 三大療癒 IP，打造消暑水藍空間。現場展售原創生活雜貨、DIY 體驗與趣味機台，戶外更有巨型萌趣氣偶，且貼心開放寵物同行入場。</div>
+                <div class="ex-desc">進駐市定古蹟「男澡堂」，攜手嚕嚕米（Moomin）、米飛兔（Miffy）與 Brunch Brother 三大療癒 IP，打造清涼水藍空間。現場展售原創選物、DIY 體驗與戶外巨型萌趣氣偶（友善寵物同行）。</div>
               </div>
             </div>
 
@@ -2840,7 +3096,7 @@ body {
                   <a href="https://www.songshanculturalpark.org/exhibition/activity/8e248f11-734d-4987-bbbe-7bfceab13e3e" target="_blank" rel="noopener noreferrer" class="spot-official-link" style="font-size:12.5px; padding:3px 10px;">展覽詳情 ↗</a>
                 </div>
                 <div class="ex-loc">📍 北向製菸工廠一樓東側（N2 門入口） ｜ 展期 7/10–10/11 ｜ 每日 10:00–18:00（免費入場）</div>
-                <div class="ex-desc">以日本限定「粉嫩櫻花哆啦A夢」為核心主題，打造日式春櫻造景與「櫻花小屋」打卡熱點。現場集結 28 款全台首發限定新品，包含櫻花哆啦、飯糰造型絨毛吊飾、限定抱枕與日系生活良品，搭配主題扭蛋區，宛如置身春櫻爛漫的童話世界。</div>
+                <div class="ex-desc">以日本限定「粉嫩櫻花哆啦 A 夢」為主題，打造浪漫春櫻造景與櫻花小屋。集結 28 款全台首發限定新品、飯糰造型吊飾與主題扭蛋區，宛如漫步春櫻童話。</div>
               </div>
             </div>
 
@@ -2856,7 +3112,7 @@ body {
                   <a href="https://www.songshanculturalpark.org/exhibition/activity/4a7f533a-7537-4dd0-af44-d074a73d47c2" target="_blank" rel="noopener noreferrer" class="spot-official-link" style="font-size:12.5px; padding:3px 10px;">展覽詳情 ↗</a>
                 </div>
                 <div class="ex-loc">📍 北向製菸工廠西側 ｜ 展期 7/10–10/11 ｜ 每日 10:00–18:00（免費入場）</div>
-                <div class="ex-desc">歡慶世紀經典《小熊維尼》誕生 100 週年！現場重現百畝森林經典場景與手稿牆，並攜手台日知名插畫家（nagano、卡納赫拉、黃阿瑪等）聯名翻玩全新維尼。特展集結逾 300 款限定商品、生態瓶手作 DIY 與粒粒公仔自選區，重溫純真美好的童年記憶。</div>
+                <div class="ex-desc">歡慶世紀經典《小熊維尼》誕生 100 週年！現場重現百畝森林經典場景與手稿牆，攜手 nagano、卡納赫拉等名家聯名翻玩全新維尼。集結逾 300 款限定商品與自選公仔，重溫純真美好。</div>
               </div>
             </div>
 
@@ -2872,7 +3128,7 @@ body {
                   <a href="https://www.songshanculturalpark.org/exhibition/activity/c64a0dee-b436-408d-b527-b141ab24a202" target="_blank" rel="noopener noreferrer" class="spot-official-link" style="font-size:12.5px; padding:3px 10px;">展覽詳情 ↗</a>
                 </div>
                 <div class="ex-loc">📍 南向製菸工廠 ｜ 展期 8/6–9/28（最後倒數） ｜ 每日 11:00–19:00（免費入場）</div>
-                <div class="ex-desc">承襲《花生漫畫 75 週年》當代藝術視角，台北站由日本藝術家崔雅喜（Ahhi Choi）主視覺領銜，展出潮流立體雕塑與現代畫作。現場同步引進百款聯名選物，包含人氣話題「耳朵飛飛史努比」玩偶與限量周邊，展期僅至 9/28 把握閉展前倒數朝聖。</div>
+                <div class="ex-desc">花生漫畫 75 週年當代藝術巡迴！由日本藝術家崔雅喜主視覺領銜，展出潮流立體雕塑與現代畫作。引進話題「耳朵飛飛史努比」玩偶與限量周邊，展期最後倒數不容錯過。</div>
               </div>
             </div>
           </div>
@@ -2901,7 +3157,7 @@ body {
             <small>微風南山 × 遠百信義 A13 精選品牌旗艦</small>
           </h3>
           <div class="tl-note">
-            從松菸悠然漫步進入台北最具國際質感的摩登商圈。穿梭於空橋連通道、探索日本指標潮流選物與當代設計專櫃，仰望台北 101 的璀璨暮色，為充實精緻的中秋三日假期畫下從容句點。
+            從松菸悠然漫步至信義商圈。穿梭空中連廊與林蔭步道，探索微風南山與遠百信義 A13 當代潮流品牌，在台北 101 的璀璨夜色中，為充實精緻的中秋三日假期畫下從容句點。
           </div>
         </div>
       </div>
